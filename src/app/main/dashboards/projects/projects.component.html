@@ -1,0 +1,383 @@
+<div id="dashboard-project" class="page-layout simple right-sidebar" fxLayout="row">
+
+  <!-- CENTER -->
+  <div class="center">
+
+      <!-- HEADER -->
+      <div class="header p-24 pb-0" fxLayout="column" fxLayoutAlign="space-between">
+          <div fxLayout="row" fxLayoutAlign="space-between start">
+            <div fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="column" fxLayoutAlign.gt-xs="center start">
+                <div class="white-fg"  fxLayout="row" fxLayoutAlign="start center">
+                    <mat-icon class=" s-18">home</mat-icon>
+                    <mat-icon class="s-16">chevron_right</mat-icon>
+                    <span class="">Projects</span>
+                    <mat-icon class=" s-16">chevron_right</mat-icon>
+                    <span class="">Home</span>
+                </div>
+                <div class="h2 mt-16">{{selectedProject.name}}</div>
+            </div>
+    
+            <a *ngIf="projectsData.allowedToViewRef" mat-raised-button class="reference-button mat-white-bg mt-16 mt-sm-0" (click)="refranceSelected(projectsData.referance)"
+               >
+                <mat-icon class="mr-8">link</mat-icon>
+                <span>Reference</span>
+            </a>
+          </div>
+
+          <div fxLayout="row">
+
+              <div class="selected-project">{{selectedProject.name}}</div>
+
+              <button mat-icon-button class="project-selector" [matMenuTriggerFor]="projectsMenu"
+                      aria-label="Select project">
+                  <mat-icon>more_horiz</mat-icon>
+              </button>
+
+              <mat-menu #projectsMenu="matMenu">
+                  <button mat-menu-item *ngFor="let project of listOfProjects" (click)="selectedProjectFromList(project)">
+                      <span>{{project.name}}</span>
+                  </button>
+              </mat-menu>
+          </div>
+      </div>
+      <!-- / HEADER -->
+ 
+      <!-- CONTENT -->
+      <div class="content">
+
+          <mat-tab-group dynamicHeight>
+            <mat-tab label="Project Summary">
+                <!-- WIDGET GROUP -->
+                <div class="widget-group grey-100-bg" fxLayout="row wrap" fxFlex="100" *albumIfOnDom
+                     [@animateStagger]="{value:'50'}">
+
+                     <div class="page-layout simple fullwidth">
+
+                      <!-- summary-header -->
+                      <div class="summary-header" fxLayout="row" fxLayoutAlign="start start">
+                  
+                          <div class="hero-text" fxLayout="column"  fxLayoutAlign="center center" fxFlex>
+                  
+                              <div class="h1">{{projectsData.Description.title}}!</div>
+                              <div class="h3">
+                                {{projectsData.location.State}}
+                                <mat-icon class="s-16 ml-4">location_on</mat-icon>
+                             </div>
+                              <div class="h3">
+                                 {{projectsData.Description.subTitle}}!
+                              </div>
+                  
+                          </div>
+                  
+                      </div>
+                      <!-- / summary-header -->
+                  
+                      <!-- CONTENT -->
+                      <div class="content" fxLayout="column">
+    
+                          <div class="price-tables" fxLayout="row wrap" fxLayoutAlign="center center">
+                              <div class="price-table mat-elevation-z2" fxLayout="column">
+                                  <div class="px-16 border-bottom p-16" fxLayout="row wrap" fxLayoutAlign="space-between center">
+                                      <div class="h3"  fxFlex="100" fxFlex.gt-sm="50">{{projectsData.widget6.title}}</div>
+                                      <mat-form-field  fxFlex="100" fxFlex.gt-sm="50">
+                                          <mat-select class="simplified" [(ngModel)]="widget6.currentProject" aria-label="Change project">
+                                              <mat-option *ngFor="let project of projectsData.widget6.projects | keys"
+                                                          [value]="project.key">
+                                                  {{project.value}}
+                                              </mat-option>
+                                          </mat-select>
+                                      </mat-form-field>
+                                  </div>
+                                  <div class="h-400">
+                                      <ngx-charts-pie-chart
+                                          *albumIfOnDom
+                                          [scheme]="widget6.scheme"
+                                          [results]="projectsData.widget6.mainChart[widget6.currentProject]"
+                                          [legend]="widget6.showLegend"
+                                          [explodeSlices]="widget6.explodeSlices"
+                                          [labels]="widget6.labels"
+                                          [doughnut]="widget6.doughnut"
+                                          [gradient]="widget6.gradient"
+                                          (select)="widget6.onSelect($event)">
+                                      </ngx-charts-pie-chart>
+                                  </div>
+                              </div>
+                  
+                             
+                  
+                          </div>
+                  
+                          <div class="faq" fxLayout="row wrap">
+                  
+                              <div class="title" fxFlex="100">About Projects</div>
+                  
+                              <div class="item" fxFlex="100" fxFlex.gt-xs="50" *ngFor="let descriptionByProj of projectsData.Description.descriptionByProj">
+                                  <div class="question">{{descriptionByProj.title}}</div>
+                                  <div class="answer">
+                                     {{descriptionByProj.desc}}.
+                                  </div>
+                              </div>
+                  
+                          </div>
+                  
+                      </div>
+                  
+                  </div>
+                  
+                  
+                </div>
+                <!-- / WIDGET GROUP -->
+
+            </mat-tab>
+              <mat-tab label="Tasks Details">
+
+                  <div class="widget-group grey-100-bg p-12" fxLayout="row wrap" fxFlex="100" *albumIfOnDom
+                       [@animateStagger]="{value:'50'}">
+                             <!-- WIDGET 2 -->
+      <album-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="column"
+      fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="33">
+  
+          <!-- Front -->
+          <div class="album-widget-front mat-white-bg mat-elevation-z2">
+          <div class="pl-16 pr-8 py-16 h-52" fxLayout="row"
+              fxLayoutAlign="space-between center">
+          <mat-form-field>
+              <mat-select class="simplified font-size-16"
+                          [(ngModel)]="projectsData.widget1.currentRange"
+                          aria-label="Change range">
+                  <mat-option *ngFor="let range of projectsData.widget1.projects | keys"
+                              [value]="range.key">
+                      {{range.value}}
+                  </mat-option>
+              </mat-select>
+          </mat-form-field>
+          <button mat-icon-button albumWidgetToggle aria-label="more">
+              <mat-icon>more_vert</mat-icon>
+          </button>
+          </div>
+  
+          <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
+          <div class="light-blue-fg font-size-72 line-height-72">
+              {{projectsData.widget1.data.count[projectsData.widget1.currentRange]}}
+          </div>
+          <div class="h3 secondary-text font-weight-500">{{projectsData.widget1.data.label}}
+          </div>
+          </div>
+          </div>
+          <!-- / Front -->
+  
+          <!-- Back -->
+          <div class="album-widget-back p-16 pt-32 mat-white-bg mat-elevation-z2">
+          <button mat-icon-button albumWidgetToggle class="album-widget-flip-button"
+              aria-label="Flip widget">
+          <mat-icon class="s-16">close</mat-icon>
+          </button>
+  
+          <div>
+          {{projectsData.widget1.detail}}
+          </div>
+          </div>
+          <!-- / Back -->
+  
+          </album-widget>
+          <!-- / WIDGET 2 -->
+    <!-- WIDGET 1 -->
+    <album-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="column"
+    fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="34">
+
+        <!-- Front -->
+        <div class="album-widget-front mat-white-bg mat-elevation-z2">
+        <div class="pl-16 pr-8 py-16 h-52" fxLayout="row"
+            fxLayoutAlign="space-between center">
+  
+        </div>
+
+        <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
+        <div class="blue-grey-fg font-size-72 line-height-72">
+            {{projectsData.widget2.data.count}}
+        </div>
+        <div class="h3 secondary-text font-weight-500">{{projectsData.widget2.data.label}}
+        </div>
+        </div>
+        <div class="py-8 mh-16 border-top" fxLayout="row wrap" fxLayoutAlign="start center">
+
+                <div class="py-8 border-right" fxLayout="column" fxLayoutAlign="center center"
+                     fxFlex="100" fxFlex.gt-sm="50">
+                    <span class="mat-display-1 mb-0">
+                            {{projectsData.widget2.data.enhancements}}
+                    </span>
+                    <span class="h4">{{projectsData.widget2.data.enhancementslabel}}</span>
+                </div>
+
+                <div class="py-8" fxLayout="column" fxLayoutAlign="center center" fxFlex="100"
+                     fxFlex.gt-sm="50">
+                    <span class="mat-display-1 mb-0">
+                            {{projectsData.widget2.data.defects}}
+                    </span>
+                    <span class="h4">{{projectsData.widget2.data.defectslabel}}</span>
+                </div>
+            </div>
+        </div>
+        <!-- / Front -->
+
+        </album-widget>
+        <!-- / WIDGET 1 -->
+
+     <!-- WIDGET 3 -->
+     <album-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="column"
+     fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="33">
+ 
+         <!-- Front -->
+         <div class="album-widget-front mat-white-bg mat-elevation-z2">
+         <div class="pl-16 pr-8 py-16 h-52" fxLayout="row"
+             fxLayoutAlign="space-between center">
+         <mat-form-field>
+             <mat-select class="simplified font-size-16"
+                         [(ngModel)]="projectsData.widget3.currentRange"
+                         aria-label="Change range">
+                 <mat-option *ngFor="let range of projectsData.widget3.projects | keys"
+                             [value]="range.key">
+                     {{range.value}}
+                 </mat-option>
+             </mat-select>
+         </mat-form-field>
+         </div>
+ 
+         <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
+         <div class="orange-fg font-size-72 line-height-72">
+             {{projectsData.widget3.data.count[projectsData.widget3.currentRange]}}
+         </div>
+         <div class="h3 secondary-text font-weight-500">{{projectsData.widget3.data.label}}
+         </div>
+         </div>
+         </div>
+         <!-- / Front -->
+         </album-widget>
+         <!-- / WIDGET 3 -->
+      <!-- WIDGET 5 -->
+<album-widget [@animate]="{value:'*',params:{y:'100%'}}" fxLayout="row" fxFlex="100"
+      class="widget widget5">
+
+            <!-- Front -->
+            <div class="album-widget-front mat-white-bg mat-elevation-z2">
+
+            <div class="px-16 border-bottom" fxLayout="row wrap" fxLayoutAlign="space-between center">
+
+                <div fxFlex class="py-16 h3">Application Screen Shots</div>
+            </div>
+            <div class="p-24" albumPerfectScrollbar>
+                    <div *ngIf="!projectsData.permissionToViewImage" class="py-16 h3">No Permissions to display original content, below are samples.</div>
+                    <div fxLayout="row wrap" fxLayoutAlign="start start">
+                        <div *ngFor="let image of projectsData.images">
+                            <div *ngIf="projectsData.images.length > 0"
+                                    class="product-image" fxlayout="row" fxLayoutAlign="center center">
+                                <img class="media" [src]="image.url">
+                            </div>
+                        </div>
+                </div>
+                </div>
+            </div>
+            <!-- / Front -->
+
+</album-widget>
+<!-- / WIDGET 5 -->
+                  </div>
+                  <!-- / WIDGET GROUP -->
+
+              </mat-tab>
+              <mat-tab label="Team Members">
+   <!-- WIDGET GROUP -->
+   <div class="widget-group grey-100-bg" fxLayout="row wrap" fxFlex="100" *albumIfOnDom
+   [@animateStagger]="{value:'50'}">
+
+  <!-- WIDGET 11 -->
+  <album-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="row"
+               fxFlex="100">
+
+      <!-- Front -->
+      <div class="album-widget-front mat-white-bg mat-elevation-z2">
+
+          <div class="p-24 mb-8 border-bottom" fxLayout="row"
+               fxLayoutAlign="space-between center">
+              <div class="h2">{{projectsData.teamMembers.title}}</div>
+              <div class="text-boxed red-bg white-fg m-0">
+                  {{projectsData.teamMembers.table.rows.length}}
+                  members
+              </div>
+          </div>
+
+          <mat-table #table [dataSource]="teamMembers.dataSource">
+
+              <!-- Avatar Column -->
+              <ng-container matColumnDef="avatar">
+                  <mat-header-cell fxFlex="96px" *matHeaderCellDef></mat-header-cell>
+                  <mat-cell fxFlex="96px" *matCellDef="let contact">
+                      <img class="avatar" *ngIf="contact.avatar" [alt]="contact.name"
+                           [src]="contact.avatar"/>
+                  </mat-cell>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="name">
+                  <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-md> Name</mat-header-cell>
+                  <mat-cell *matCellDef="let contact" fxHide fxShow.gt-md>
+                      <p class="text-truncate">...
+                         </p>
+                  </mat-cell>
+              </ng-container>
+
+              <!-- Role Column -->
+              <ng-container matColumnDef="role">
+                  <mat-header-cell *matHeaderCellDef>Role
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let contact">
+                      <p class="position text-truncate font-weight-600">
+                          {{contact.role}}
+                      </p>
+                  </mat-cell>
+              </ng-container>
+
+              <!-- Office Column -->
+              <ng-container matColumnDef="office">
+                  <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-md>Office
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let contact" fxHide fxShow.gt-md>
+                      <p class="office text-truncate">
+                          {{contact.office}}
+                      </p>
+                  </mat-cell>
+              </ng-container>
+
+                <!-- Active Column -->
+                <ng-container matColumnDef="status">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Current Status at Project</mat-header-cell>
+                    <mat-cell *matCellDef="let contact" >
+                        <mat-icon *ngIf="contact.status" class="active-icon mat-green-600-bg s-16" style="border-radius: 50%">check</mat-icon>
+                        <mat-icon *ngIf="!contact.status" class="active-icon mat-red-500-bg s-16" style="border-radius: 50%">close</mat-icon>
+                    </mat-cell>
+                </ng-container>
+
+              <mat-header-row
+                  *matHeaderRowDef="projectsData.teamMembers.table.columns"></mat-header-row>
+              <mat-row *matRowDef="let contact; columns: projectsData.teamMembers.table.columns;">
+              </mat-row>
+          </mat-table>
+      </div>
+      <!-- / Front -->
+
+  </album-widget>
+  <!-- / WIDGET 11 -->
+
+</div>
+<!-- / WIDGET GROUP -->
+
+              </mat-tab>
+          </mat-tab-group>
+
+      </div>
+      <!-- / CONTENT -->
+
+  </div>
+  <!-- / CENTER -->
+
+</div>

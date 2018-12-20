@@ -1,0 +1,109 @@
+<div id="main">
+
+    <!-- TOOLBAR: Above -->
+    <ng-container *ngIf="albumConfig.layout.toolbar.position === 'above'">
+        <ng-container *ngTemplateOutlet="toolbar"></ng-container>
+    </ng-container>
+    <!-- / TOOLBAR: Above -->
+
+    <div id="container-1" class="container">
+
+        <!-- NAVBAR: Left -->
+        <ng-container *ngIf="albumConfig.layout.navbar.position === 'left'">
+            <ng-container *ngTemplateOutlet="leftNavbar"></ng-container>
+        </ng-container>
+        <!-- / NAVBAR: Left -->
+
+        <div id="container-2" class="container">
+
+            <!-- TOOLBAR: Below fixed -->
+            <ng-container *ngIf="albumConfig.layout.toolbar.position === 'below-fixed'">
+                <ng-container *ngTemplateOutlet="toolbar"></ng-container>
+            </ng-container>
+            <!-- / TOOLBAR: Below fixed -->
+
+            <div id="container-3" class="container" albumPerfectScrollbar
+                 [albumPerfectScrollbarOptions]="{suppressScrollX: true, updateOnRouteChange : true}">
+
+                <!-- TOOLBAR: Below static -->
+                <ng-container *ngIf="albumConfig.layout.toolbar.position === 'below-static'">
+                    <ng-container *ngTemplateOutlet="toolbar"></ng-container>
+                </ng-container>
+                <!-- / TOOLBAR: Below static -->
+
+                <!-- CONTENT -->
+                <content></content>
+                <!-- / CONTENT -->
+
+                <!-- FOOTER: Below static -->
+                <ng-container *ngIf="albumConfig.layout.footer.position === 'below-static'">
+                    <ng-container *ngTemplateOutlet="footer"></ng-container>
+                </ng-container>
+                <!-- / FOOTER: Below static -->
+
+            </div>
+
+            <!-- FOOTER: Below fixed -->
+            <ng-container *ngIf="albumConfig.layout.footer.position === 'below-fixed'">
+                <ng-container *ngTemplateOutlet="footer"></ng-container>
+            </ng-container>
+            <!-- / FOOTER: Below fixed -->
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER: Above -->
+    <ng-container *ngIf="albumConfig.layout.footer.position === 'above'">
+        <ng-container *ngTemplateOutlet="footer"></ng-container>
+    </ng-container>
+    <!-- FOOTER: Above -->
+
+</div>
+<!-- QUICK PANEL -->
+<album-sidebar name="quickPanel" position="right" class="quick-panel">
+        <quick-panel></quick-panel>
+    </album-sidebar>
+    <!-- / QUICK PANEL -->
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- @ PARTIALS
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<!-- TOOLBAR -->
+<ng-template #toolbar>
+    <toolbar *ngIf="!albumConfig.layout.toolbar.hidden"
+             [ngClass]="[albumConfig.layout.toolbar.position, albumConfig.layout.toolbar.background]"></toolbar>
+</ng-template>
+<!-- / TOOLBAR -->
+
+<!-- FOOTER -->
+<ng-template #footer>
+    <footer *ngIf="!albumConfig.layout.footer.hidden"
+            [ngClass]="[albumConfig.layout.footer.position, albumConfig.layout.footer.background]"></footer>
+</ng-template>
+<!-- / FOOTER -->
+
+<!-- LEFT NAVBAR -->
+<ng-template #leftNavbar>
+    <album-sidebar name="navbar" class="navbar-album-sidebar"
+                  [folded]="albumConfig.layout.navbar.folded"
+                  lockedOpen="gt-md"
+                  *ngIf="!albumConfig.layout.navbar.hidden">
+        <navbar [variant]="albumConfig.layout.navbar.variant"
+                class="left-navbar" [ngClass]="albumConfig.layout.navbar.background"></navbar>
+    </album-sidebar>
+</ng-template>
+<!-- / LEFT NAVBAR -->
+
+<!-- RIGHT NAVBAR -->
+<ng-template #rightNavbar>
+    <album-sidebar name="navbar" position="right" class="navbar-album-sidebar"
+                  [folded]="albumConfig.layout.navbar.folded"
+                  lockedOpen="gt-md"
+                  *ngIf="!albumConfig.layout.navbar.hidden">
+        <navbar [variant]="albumConfig.layout.navbar.variant"
+                class="right-navbar" [ngClass]="albumConfig.layout.navbar.background"></navbar>
+    </album-sidebar>
+</ng-template>
+<!-- / RIGHT NAVBAR -->

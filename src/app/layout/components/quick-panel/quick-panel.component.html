@@ -1,0 +1,32 @@
+<mat-list class="date" cdkFocusRegionStart>
+
+    <h3 matSubheader cdkFocusInit>
+        <span>Today</span>
+    </h3>
+
+    <div class="secondary-text mat-display-1 mb-0 p-16">
+        <div class="mb-12">
+            {{date | date:'EEEE'}}
+        </div>
+        <div fxLayout="row" class="mb-12" fxLayoutAlign="start start">
+            <span> {{date | date:'d'}}</span>
+            <span class="mat-subheading-1">th</span>
+            <span> {{date | date:'MMMM'}}</span>
+        </div>
+        <div fxLayout="row" >
+                <span> {{date | date:'y'}}</span>
+            </div>
+    </div>
+    <h3 matSubheader cdkFocusInit>
+        <span>Application Specifications</span>
+    </h3>
+    <div class="py-8 mh-16 p-16 border-top" fxLayout="row wrap" fxLayoutAlign="start center">                   
+        <div [innerHTML]="albumSpec.devcontent.content"></div>
+    </div>
+    <div class="py-8 mh-16 p-16 border-top" fxLayout="row wrap" fxLayoutAlign="start center">                   
+        <div [innerHTML]="albumSpec.devDepcontent.content"></div>
+    </div>
+    <div class="py-8 mh-16 p-16 border-top" fxLayout="row wrap" fxLayoutAlign="start center">                   
+        <div [innerHTML]="albumSpec.devops.content"></div>
+    </div>
+</mat-list>
