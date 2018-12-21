@@ -68629,7 +68629,7 @@ var ProfessionalDashboardDb = /** @class */ (function () {
             ]
         },
         aboutProject: {
-            projectsCount: '1',
+            projectsCount: '6',
             projectsdata: [
                 {
                     id: 'verizon',
@@ -68658,7 +68658,7 @@ var ProfessionalDashboardDb = /** @class */ (function () {
                     id: 'chubb',
                     label: 'Project 2',
                     projectsWorked: 3,
-                    projectsWorkedSubTitle: 'Projects Worked @ Telecommunications company',
+                    projectsWorkedSubTitle: 'Projects Worked @ Commercial insurance company',
                     projectDuration: 15,
                     technologiesUsed: 8,
                     content: {

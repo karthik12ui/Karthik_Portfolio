@@ -156,7 +156,7 @@ export class ProfessionalDashboardDb
             ]
         },
         aboutProject: {
-            projectsCount  : '1',
+            projectsCount  : '6',
            projectsdata: [
             {
                 id : 'verizon',
@@ -185,7 +185,7 @@ export class ProfessionalDashboardDb
                 id : 'chubb',
                    label: 'Project 2',
                 projectsWorked: 3,
-                projectsWorkedSubTitle: 'Projects Worked @ Telecommunications company',
+                projectsWorkedSubTitle: 'Projects Worked @ Commercial insurance company',
                 projectDuration: 15,
                 technologiesUsed: 8,
                    content   :  {
