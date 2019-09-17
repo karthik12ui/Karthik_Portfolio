@@ -68535,6 +68535,13 @@ var ProfessionalDashboardDb = /** @class */ (function () {
                         fill: 'start'
                     }
                 ],
+                '2019': [
+                    {
+                        label: 'Hours',
+                        data: [168, 160, 168, 112, 176, 160, 176, 176, 80, 0, 0, 0],
+                        fill: 'start'
+                    }
+                ],
             },
             labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
             colors: [
@@ -68636,8 +68643,8 @@ var ProfessionalDashboardDb = /** @class */ (function () {
                     label: 'Project 1',
                     projectsWorked: 1,
                     projectsWorkedSubTitle: 'Projects Worked @ Telecommunications company',
-                    projectDuration: 3,
-                    technologiesUsed: 5,
+                    projectDuration: 13,
+                    technologiesUsed: 8,
                     content: {
                         'content': '<h1>As a Angular Developer</h1>' +
                             '<ul>' +
@@ -68829,14 +68836,14 @@ var ProjectsDashboardDb = /** @class */ (function () {
             {
                 projectId: 'verizon',
                 allowedToViewRef: true,
-                referance: 'https://thingspaceportal.verizon.com/samsungtracker/#/setup/registration',
+                referance: 'https://thingspaceportal.verizon.com/ccapp/#/setup/registration',
                 projectAtClient: {
                     count: '1',
                     duration: '3',
                     details: [
                         {
                             'name': 'tss',
-                            'duration': '3',
+                            'duration': '13',
                         },
                     ]
                 },
@@ -68844,12 +68851,14 @@ var ProjectsDashboardDb = /** @class */ (function () {
                     'title': 'Hours Spent on Project',
                     'projects': {
                         'tss': 'Thing Space Portal - IoT',
+                        'pnw': 'Private Network - IoT',
                     },
-                    'currentRange': 'tss',
+                    'currentRange': 'pnw',
                     'data': {
                         'label': 'HOURS ON PROJECT',
                         'count': {
-                            'tss': 358,
+                            'tss': 1128,
+                            'pnw': 1020
                         },
                     },
                     'detail': 'Will be updated soon...'
@@ -68858,23 +68867,25 @@ var ProjectsDashboardDb = /** @class */ (function () {
                     'title': 'Tasks',
                     'data': {
                         'label': 'COMPLETED TASKS',
-                        'count': 45,
-                        'enhancements': 12,
+                        'count': 158,
+                        'enhancements': 132,
                         'enhancementslabel': 'Completed Enhancements',
                         'defectslabel': 'Defects Resolved',
-                        'defects': 9
+                        'defects': 26
                     }
                 },
                 'widget3': {
                     'title': 'Technologies',
                     'projects': {
                         'tss': 'Thing Space Portal - IoT',
+                        'pnw': 'Private Network - IoT',
                     },
-                    'currentRange': 'tss',
+                    'currentRange': 'pnw',
                     'data': {
                         'label': 'TECHNOLOGIES',
                         'count': {
                             'tss': 5,
+                            'pnw': 8,
                         },
                     },
                 },
@@ -68906,9 +68917,10 @@ var ProjectsDashboardDb = /** @class */ (function () {
                 'widget6': {
                     'title': 'Select to View Technologies worked on by Project @ Telecommunications company',
                     'projects': {
+                        'pnw': 'Private Network - IoT',
                         'tss': 'Thing Space Portal - IoT',
                     },
-                    'currentProject': 'tss',
+                    'currentProject': 'pnw',
                     'mainChart': {
                         'tss': [
                             {
@@ -68922,6 +68934,36 @@ var ProjectsDashboardDb = /** @class */ (function () {
                             {
                                 'name': 'CSS / SCSS',
                                 'value': 15
+                            },
+                            {
+                                'name': 'Axa Config',
+                                'value': 2
+                            },
+                            {
+                                'name': 'Unit Testing',
+                                'value': 3
+                            }
+                        ],
+                        'pnw': [
+                            {
+                                'name': 'Angular with Typescript',
+                                'value': 50
+                            },
+                            {
+                                'name': 'HTML',
+                                'value': 15
+                            },
+                            {
+                                'name': 'CSS / SCSS',
+                                'value': 10
+                            },
+                            {
+                                'name': 'Angular Material',
+                                'value': 10
+                            },
+                            {
+                                'name': 'Angular Flex',
+                                'value': 10
                             },
                             {
                                 'name': 'Axa Config',
@@ -68947,7 +68989,12 @@ var ProjectsDashboardDb = /** @class */ (function () {
                         {
                             title: 'Thing Space Portal - IoT',
                             // tslint:disable-next-line:max-line-length
-                            desc: 'will be updated soon'
+                            desc: 'Created a Dynamic app to activate Mico SIM devices of multiple vendors. App holdes multiple features from Registation of user, displaying plans of subscriptions, activating devices and displaying the data usage and also processing monthly payments to renew subscription'
+                        },
+                        {
+                            title: 'Private Network - IoT',
+                            // tslint:disable-next-line:max-line-length
+                            desc: 'will be updated soon...'
                         },
                     ]
                 },
@@ -69023,9 +69070,9 @@ var ProjectsDashboardDb = /** @class */ (function () {
                             },
                             {
                                 avatar: '',
-                                name: 'Abhi',
-                                role: 'Angular Devloper',
-                                office: 'Offshore - INDIA',
+                                name: 'Himani',
+                                role: 'JAVA Devloper',
+                                office: 'On Site - NJ',
                                 status: true
                             }
                         ]

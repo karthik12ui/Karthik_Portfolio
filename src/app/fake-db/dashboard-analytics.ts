@@ -60,6 +60,14 @@ export class ProfessionalDashboardDb
 
                     }
                 ],
+                '2019': [
+                    {
+                        label: 'Hours',
+                        data : [168, 160, 168, 112, 176, 160, 176, 176, 80, 0, 0, 0],
+                        fill : 'start'
+
+                    }
+                ],
 
             },
             labels   : ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
@@ -160,11 +168,11 @@ export class ProfessionalDashboardDb
            projectsdata: [
             {
                 id : 'verizon',
-                   label: 'Project 1',
+                label: 'Project 1',
                 projectsWorked: 1,
                 projectsWorkedSubTitle: 'Projects Worked @ Telecommunications company',
-                projectDuration: 3,
-                technologiesUsed: 5,
+                projectDuration: 13,
+                technologiesUsed: 8,
                    content   :  {
                     'content': '<h1>As a Angular Developer</h1>' +
                     '<ul>' +
