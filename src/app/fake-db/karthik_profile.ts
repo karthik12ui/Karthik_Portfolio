@@ -54,31 +54,31 @@ export class KarthikProfileFakeDb {
         },
         'groups' : [
             {
-                'logo'    : 'assets/images/logos/stackoverFlow.png',
+                'logo'    : './assets/images/logos/stackoverFlow.png',
                 'name'    : 'Stack Overflow',
                 'category': 'Web',
                 'url': 'https://stackoverflow.com/',
             },
             {
-                'logo'    : 'assets/images/logos/Treehouse.png',
+                'logo'    : './assets/images/logos/Treehouse.png',
                 'name'    : 'Tree House',
                 'category': 'Web',
                 'url': 'https://teamtreehouse.com/',
             },
             {
-                'logo'    : 'assets/images/logos/angular.png',
+                'logo'    : './assets/images/logos/angular.png',
                 'name'    : 'Angular',
                 'category': 'Web',
                 'url': 'https://angular.io/',
             },
             {
-                'logo'    : 'assets/images/logos/google.png',
+                'logo'    : './assets/images/logos/google.png',
                 'name'    : 'Google',
                 'category': 'Web',
                 'url': 'https://www.google.com/',
             },
             {
-                'logo'    : 'assets/images/logos/msdnlogo.jpg',
+                'logo'    : './assets/images/logos/msdnlogo.jpg',
                 'name'    : 'MDN Javascript',
                 'category': 'Web',
                 'url': 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',

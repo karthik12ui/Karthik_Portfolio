@@ -203,22 +203,22 @@ export class ProjectsDashboardDb {
                       'images' : [
                           {
                               'id'  : 1,
-                              'url' : 'assets/images/samples/Activation.PNG',
+                              'url' : './assets/images/samples/Activation.PNG',
                               'type': 'image'
                           },
                           {
                               'id'  : 2,
-                              'url' : 'assets/images/samples/Catalog.PNG',
+                              'url' : './assets/images/samples/Catalog.PNG',
                               'type': 'image'
                           },
                           {
                               'id'  : 3,
-                              'url' : 'assets/images/samples/Payment.PNG',
+                              'url' : './assets/images/samples/Payment.PNG',
                               'type': 'image'
                           },
                           {
                               'id'  : 4,
-                              'url' : 'assets/images/samples/Summary.PNG',
+                              'url' : './assets/images/samples/Summary.PNG',
                               'type': 'image'
                           }
                       ],
@@ -485,22 +485,22 @@ export class ProjectsDashboardDb {
                     'images' : [
                         {
                             'id'  : 1,
-                            'url' : 'assets/images/samples/12.PNG',
+                            'url' : './assets/images/samples/12.PNG',
                             'type': 'image'
                         },
                         {
                             'id'  : 2,
-                            'url' : 'assets/images/samples/13.PNG',
+                            'url' : './assets/images/samples/13.PNG',
                             'type': 'image'
                         },
                         {
                             'id'  : 3,
-                            'url' : 'assets/images/samples/14.PNG',
+                            'url' : './assets/images/samples/14.PNG',
                             'type': 'image'
                         },
                         {
                             'id'  : 4,
-                            'url' : 'assets/images/samples/MEAN_APP.PNG',
+                            'url' : './assets/images/samples/MEAN_APP.PNG',
                             'type': 'image'
                         }
                     ],
@@ -822,22 +822,22 @@ export class ProjectsDashboardDb {
                     'images' : [
                         {
                             'id'  : 1,
-                            'url' : 'assets/images/samples/oeds1.png',
+                            'url' : './assets/images/samples/oeds1.png',
                             'type': 'image'
                         },
                         {
                             'id'  : 2,
-                            'url' : 'assets/images/samples/oeds2.png',
+                            'url' : './assets/images/samples/oeds2.png',
                             'type': 'image'
                         },
                         {
                             'id'  : 3,
-                            'url' : 'assets/images/samples/parentDash.JPG',
+                            'url' : './assets/images/samples/parentDash.JPG',
                             'type': 'image'
                         },
                         {
                             'id'  : 4,
-                            'url' : 'assets/images/samples/serachOrg.PNG',
+                            'url' : './assets/images/samples/serachOrg.PNG',
                             'type': 'image'
                         }
                     ],
@@ -1021,7 +1021,7 @@ export class ProjectsDashboardDb {
                         'images' : [
                             {
                                 'id'  : 1,
-                                'url' : 'assets/images/samples/Quorum Review.png',
+                                'url' : './assets/images/samples/Quorum Review.png',
                                 'type': 'image'
                             }
                         ],
@@ -1170,7 +1170,7 @@ export class ProjectsDashboardDb {
                             'images' : [
                                 {
                                     'id'  : 1,
-                                    'url' : 'assets/images/ecommerce/product-image-placeholder.png',
+                                    'url' : './assets/images/ecommerce/product-image-placeholder.png',
                                     'type': 'image'
                                 },
                             ],
@@ -1382,7 +1382,7 @@ export class ProjectsDashboardDb {
                                 'images' : [
                                     {
                                         'id'  : 1,
-                                        'url' : 'assets/images/ecommerce/product-image-placeholder.png',
+                                        'url' : './assets/images/ecommerce/product-image-placeholder.png',
                                         'type': 'image'
                                     },
                                 ],

@@ -61559,7 +61559,7 @@ var AlbumCountdownModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- DEMO CONTENT -->\n<div class=\"demo-content\">\n\n    <img src=\"assets/images/beach.jpg\" alt=\"beach\" style=\"max-width: 640px; width: 100%;\">\n\n    <h1>Early Sunrise</h1>\n    <h4 class=\"secondary-text\">Demo Content</h4>\n\n    <p>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tortor nibh, convallis sed purus nec,\n        auctor venenatis nisl. Suspendisse potenti. Nullam sagittis nulla in diam finibus, sed pharetra velit\n        vestibulum. Suspendisse euismod in urna eu posuere.\n    </p>\n\n    <blockquote>\n        <p>\n            Nunc vel lacinia lorem. Nullam tincidunt sed purus eu placerat. Donec id dictum erat. Etiam enim ex, dapibus\n            et tortor id, posuere pretium est. Maecenas fringilla ipsum vitae neque elementum, at eleifend ante\n            sollicitudin. Donec viverra augue dolor, a venenatis tellus consectetur sit amet.\n        </p>\n        <footer>\n            John Doe\n        </footer>\n    </blockquote>\n\n    <p>\n        Ut ornare sit amet velit vel congue. Ut nec tristique eros. Lorem ipsum dolor sit amet, consectetur adipiscing\n        elit. Vivamus sed lorem quis nibh porta iaculis. Vestibulum ut eleifend ante, at semper mi. Nam imperdiet est\n        nisi, quis hendrerit tellus convallis et. Morbi in luctus neque. Curabitur elementum ut est et gravida. In hac\n        habitasse platea dictumst.\n    </p>\n\n    <p>\n        In et placerat eros, eu tempor turpis. Curabitur ac felis finibus, elementum lectus vitae, venenatis est.\n        Integer mollis nisl a eros scelerisque varius. Etiam venenatis lectus vel erat condimentum tristique vel vel mi.\n        Nulla id euismod mi, et mollis tellus.\n    </p>\n\n    <p>\n        Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti\n        sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur vitae sagittis odio.\n        Suspendisse ullamcorper nunc non pellentesque laoreet. Curabitur eu tortor id quam pretium mattis. Proin ut quam\n        velit.\n    </p>\n\n    <p>\n        Quisque sit amet risus enim. Aliquam sit amet interdum justo, at ultricies sapien. Suspendisse et semper urna,\n        in gravida eros. Quisque id nibh iaculis, euismod urna sed, egestas nisi. Donec eros metus, congue a imperdiet\n        feugiat, sagittis nec ipsum. Quisque dapibus mollis felis non tristique.\n    </p>\n\n    <p>\n        Ut auctor, metus sed dapibus tempus, urna diam auctor odio, in malesuada odio risus vitae nisi. Etiam blandit\n        ante urna, vitae placerat massa mollis in. Duis nec urna ac purus semper dictum ut eget justo. Aenean non\n        sagittis augue. Sed venenatis rhoncus enim eget ornare. Donec viverra sed felis at venenatis. Mauris aliquam\n        fringilla nulla, sit amet congue felis dignissim at.\n    </p>\n\n    <p>\n        Quisque accumsan augue tempor ante mollis, sed placerat diam porttitor. Vestibulum dignissim sem vel velit\n        eleifend, non pellentesque quam convallis. Pellentesque est dolor, dignissim ac tortor tristique, hendrerit\n        iaculis metus. Praesent pulvinar quam eu leo consectetur faucibus. Vestibulum purus diam, gravida sagittis\n        feugiat sit amet, tincidunt in ligula. Sed semper vestibulum magna. Lorem ipsum dolor sit amet, consectetur\n        adipiscing elit. Suspendisse tortor nibh, convallis sed purus nec, auctor venenatis nisl. Suspendisse potenti.\n    </p>\n\n    <p>\n        Nullam sagittis nulla in diam finibus, sed pharetra velit vestibulum. Suspendisse euismod in urna eu posuere.\n        Etiam blandit nunc arcu, et consectetur orci blandit a. Aliquam condimentum pharetra quam at ultricies. Nunc vel\n        lacinia lorem. Nullam tincidunt sed purus eu placerat. Donec id dictum erat. Etiam enim ex, dapibus et tortor\n        id, posuere pretium est. Maecenas fringilla ipsum vitae neque elementum, at eleifend ante sollicitudin. Donec\n        viverra augue dolor, a venenatis tellus consectetur sit amet...\n    </p>\n</div>\n<!-- / DEMO CONTENT -->\n"
+module.exports = "<!-- DEMO CONTENT -->\n<div class=\"demo-content\">\n\n    <img src=\"./assets/images/beach.jpg\" alt=\"beach\" style=\"max-width: 640px; width: 100%;\">\n\n    <h1>Early Sunrise</h1>\n    <h4 class=\"secondary-text\">Demo Content</h4>\n\n    <p>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tortor nibh, convallis sed purus nec,\n        auctor venenatis nisl. Suspendisse potenti. Nullam sagittis nulla in diam finibus, sed pharetra velit\n        vestibulum. Suspendisse euismod in urna eu posuere.\n    </p>\n\n    <blockquote>\n        <p>\n            Nunc vel lacinia lorem. Nullam tincidunt sed purus eu placerat. Donec id dictum erat. Etiam enim ex, dapibus\n            et tortor id, posuere pretium est. Maecenas fringilla ipsum vitae neque elementum, at eleifend ante\n            sollicitudin. Donec viverra augue dolor, a venenatis tellus consectetur sit amet.\n        </p>\n        <footer>\n            John Doe\n        </footer>\n    </blockquote>\n\n    <p>\n        Ut ornare sit amet velit vel congue. Ut nec tristique eros. Lorem ipsum dolor sit amet, consectetur adipiscing\n        elit. Vivamus sed lorem quis nibh porta iaculis. Vestibulum ut eleifend ante, at semper mi. Nam imperdiet est\n        nisi, quis hendrerit tellus convallis et. Morbi in luctus neque. Curabitur elementum ut est et gravida. In hac\n        habitasse platea dictumst.\n    </p>\n\n    <p>\n        In et placerat eros, eu tempor turpis. Curabitur ac felis finibus, elementum lectus vitae, venenatis est.\n        Integer mollis nisl a eros scelerisque varius. Etiam venenatis lectus vel erat condimentum tristique vel vel mi.\n        Nulla id euismod mi, et mollis tellus.\n    </p>\n\n    <p>\n        Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti\n        sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur vitae sagittis odio.\n        Suspendisse ullamcorper nunc non pellentesque laoreet. Curabitur eu tortor id quam pretium mattis. Proin ut quam\n        velit.\n    </p>\n\n    <p>\n        Quisque sit amet risus enim. Aliquam sit amet interdum justo, at ultricies sapien. Suspendisse et semper urna,\n        in gravida eros. Quisque id nibh iaculis, euismod urna sed, egestas nisi. Donec eros metus, congue a imperdiet\n        feugiat, sagittis nec ipsum. Quisque dapibus mollis felis non tristique.\n    </p>\n\n    <p>\n        Ut auctor, metus sed dapibus tempus, urna diam auctor odio, in malesuada odio risus vitae nisi. Etiam blandit\n        ante urna, vitae placerat massa mollis in. Duis nec urna ac purus semper dictum ut eget justo. Aenean non\n        sagittis augue. Sed venenatis rhoncus enim eget ornare. Donec viverra sed felis at venenatis. Mauris aliquam\n        fringilla nulla, sit amet congue felis dignissim at.\n    </p>\n\n    <p>\n        Quisque accumsan augue tempor ante mollis, sed placerat diam porttitor. Vestibulum dignissim sem vel velit\n        eleifend, non pellentesque quam convallis. Pellentesque est dolor, dignissim ac tortor tristique, hendrerit\n        iaculis metus. Praesent pulvinar quam eu leo consectetur faucibus. Vestibulum purus diam, gravida sagittis\n        feugiat sit amet, tincidunt in ligula. Sed semper vestibulum magna. Lorem ipsum dolor sit amet, consectetur\n        adipiscing elit. Suspendisse tortor nibh, convallis sed purus nec, auctor venenatis nisl. Suspendisse potenti.\n    </p>\n\n    <p>\n        Nullam sagittis nulla in diam finibus, sed pharetra velit vestibulum. Suspendisse euismod in urna eu posuere.\n        Etiam blandit nunc arcu, et consectetur orci blandit a. Aliquam condimentum pharetra quam at ultricies. Nunc vel\n        lacinia lorem. Nullam tincidunt sed purus eu placerat. Donec id dictum erat. Etiam enim ex, dapibus et tortor\n        id, posuere pretium est. Maecenas fringilla ipsum vitae neque elementum, at eleifend ante sollicitudin. Donec\n        viverra augue dolor, a venenatis tellus consectetur sit amet...\n    </p>\n</div>\n<!-- / DEMO CONTENT -->\n"
 
 /***/ }),
 
@@ -69002,22 +69002,22 @@ var ProjectsDashboardDb = /** @class */ (function () {
                 'images': [
                     {
                         'id': 1,
-                        'url': 'assets/images/samples/Activation.PNG',
+                        'url': './assets/images/samples/Activation.PNG',
                         'type': 'image'
                     },
                     {
                         'id': 2,
-                        'url': 'assets/images/samples/Catalog.PNG',
+                        'url': './assets/images/samples/Catalog.PNG',
                         'type': 'image'
                     },
                     {
                         'id': 3,
-                        'url': 'assets/images/samples/Payment.PNG',
+                        'url': './assets/images/samples/Payment.PNG',
                         'type': 'image'
                     },
                     {
                         'id': 4,
-                        'url': 'assets/images/samples/Summary.PNG',
+                        'url': './assets/images/samples/Summary.PNG',
                         'type': 'image'
                     }
                 ],
@@ -69284,22 +69284,22 @@ var ProjectsDashboardDb = /** @class */ (function () {
                 'images': [
                     {
                         'id': 1,
-                        'url': 'assets/images/samples/12.PNG',
+                        'url': './assets/images/samples/12.PNG',
                         'type': 'image'
                     },
                     {
                         'id': 2,
-                        'url': 'assets/images/samples/13.PNG',
+                        'url': './assets/images/samples/13.PNG',
                         'type': 'image'
                     },
                     {
                         'id': 3,
-                        'url': 'assets/images/samples/14.PNG',
+                        'url': './assets/images/samples/14.PNG',
                         'type': 'image'
                     },
                     {
                         'id': 4,
-                        'url': 'assets/images/samples/MEAN_APP.PNG',
+                        'url': './assets/images/samples/MEAN_APP.PNG',
                         'type': 'image'
                     }
                 ],
@@ -69621,22 +69621,22 @@ var ProjectsDashboardDb = /** @class */ (function () {
                 'images': [
                     {
                         'id': 1,
-                        'url': 'assets/images/samples/oeds1.png',
+                        'url': './assets/images/samples/oeds1.png',
                         'type': 'image'
                     },
                     {
                         'id': 2,
-                        'url': 'assets/images/samples/oeds2.png',
+                        'url': './assets/images/samples/oeds2.png',
                         'type': 'image'
                     },
                     {
                         'id': 3,
-                        'url': 'assets/images/samples/parentDash.JPG',
+                        'url': './assets/images/samples/parentDash.JPG',
                         'type': 'image'
                     },
                     {
                         'id': 4,
-                        'url': 'assets/images/samples/serachOrg.PNG',
+                        'url': './assets/images/samples/serachOrg.PNG',
                         'type': 'image'
                     }
                 ],
@@ -69820,7 +69820,7 @@ var ProjectsDashboardDb = /** @class */ (function () {
                 'images': [
                     {
                         'id': 1,
-                        'url': 'assets/images/samples/Quorum Review.png',
+                        'url': './assets/images/samples/Quorum Review.png',
                         'type': 'image'
                     }
                 ],
@@ -69969,7 +69969,7 @@ var ProjectsDashboardDb = /** @class */ (function () {
                 'images': [
                     {
                         'id': 1,
-                        'url': 'assets/images/ecommerce/product-image-placeholder.png',
+                        'url': './assets/images/ecommerce/product-image-placeholder.png',
                         'type': 'image'
                     },
                 ],
@@ -70181,7 +70181,7 @@ var ProjectsDashboardDb = /** @class */ (function () {
                 'images': [
                     {
                         'id': 1,
-                        'url': 'assets/images/ecommerce/product-image-placeholder.png',
+                        'url': './assets/images/ecommerce/product-image-placeholder.png',
                         'type': 'image'
                     },
                 ],
@@ -70350,31 +70350,31 @@ var KarthikProfileFakeDb = /** @class */ (function () {
         },
         'groups': [
             {
-                'logo': 'assets/images/logos/stackoverFlow.png',
+                'logo': './assets/images/logos/stackoverFlow.png',
                 'name': 'Stack Overflow',
                 'category': 'Web',
                 'url': 'https://stackoverflow.com/',
             },
             {
-                'logo': 'assets/images/logos/Treehouse.png',
+                'logo': './assets/images/logos/Treehouse.png',
                 'name': 'Tree House',
                 'category': 'Web',
                 'url': 'https://teamtreehouse.com/',
             },
             {
-                'logo': 'assets/images/logos/angular.png',
+                'logo': './assets/images/logos/angular.png',
                 'name': 'Angular',
                 'category': 'Web',
                 'url': 'https://angular.io/',
             },
             {
-                'logo': 'assets/images/logos/google.png',
+                'logo': './assets/images/logos/google.png',
                 'name': 'Google',
                 'category': 'Web',
                 'url': 'https://www.google.com/',
             },
             {
-                'logo': 'assets/images/logos/msdnlogo.jpg',
+                'logo': './assets/images/logos/msdnlogo.jpg',
                 'name': 'MDN Javascript',
                 'category': 'Web',
                 'url': 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
@@ -71044,7 +71044,7 @@ var NavbarModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"navbar-top mat-green-700-bg\">\n\n    <div class=\"logo\">\n        <mat-icon>laptop_chromebook</mat-icon>\n        <span class=\"logo-text secondary-text\">Karthik's Album</span>\n    </div>\n\n    <div class=\"buttons\">\n\n        <button mat-icon-button class=\"toggle-sidebar-folded\"\n                (click)=\"toggleSidebarFolded()\" fxHide.lt-lg>\n            <mat-icon class=\"secondary-text\">menu</mat-icon>\n        </button>\n\n        <button mat-icon-button class=\"toggle-sidebar-opened\"\n                (click)=\"toggleSidebarOpened()\" fxHide.gt-md>\n            <mat-icon class=\"secondary-text\">arrow_back</mat-icon>\n        </button>\n\n    </div>\n\n</div>\n\n\n<div class=\"navbar-scroll-container\" albumPerfectScrollbar [albumPerfectScrollbarOptions]=\"{suppressScrollX: true}\">\n\n    <div class=\"user mat-gray-700-bg\" fxLayout=\"column\">\n\n        <div class=\"h3 username\">Karthik Nathani</div>\n        <div class=\"h5 email hint-text mt-8\">karthik.uiAngular@gmail.com</div>\n        <div class=\"avatar-container\" [ngClass]=\"albumConfig.layout.navbar.background\">\n            <img class=\"avatar\" src=\"assets/images/avatars/angularjs.png\">\n        </div>\n\n    </div>\n\n    <div class=\"navbar-content\">\n        <album-navigation layout=\"vertical\"></album-navigation>\n    </div>\n\n</div>\n"
+module.exports = "<div class=\"navbar-top mat-green-700-bg\">\n\n    <div class=\"logo\">\n        <mat-icon>laptop_chromebook</mat-icon>\n        <span class=\"logo-text secondary-text\">Karthik's Album</span>\n    </div>\n\n    <div class=\"buttons\">\n\n        <button mat-icon-button class=\"toggle-sidebar-folded\"\n                (click)=\"toggleSidebarFolded()\" fxHide.lt-lg>\n            <mat-icon class=\"secondary-text\">menu</mat-icon>\n        </button>\n\n        <button mat-icon-button class=\"toggle-sidebar-opened\"\n                (click)=\"toggleSidebarOpened()\" fxHide.gt-md>\n            <mat-icon class=\"secondary-text\">arrow_back</mat-icon>\n        </button>\n\n    </div>\n\n</div>\n\n\n<div class=\"navbar-scroll-container\" albumPerfectScrollbar [albumPerfectScrollbarOptions]=\"{suppressScrollX: true}\">\n\n    <div class=\"user mat-gray-700-bg\" fxLayout=\"column\">\n\n        <div class=\"h3 username\">Karthik Nathani</div>\n        <div class=\"h5 email hint-text mt-8\">karthik.uiAngular@gmail.com</div>\n        <div class=\"avatar-container\" [ngClass]=\"albumConfig.layout.navbar.background\">\n            <img class=\"avatar\" src=\"./assets/images/avatars/angularjs.png\">\n        </div>\n\n    </div>\n\n    <div class=\"navbar-content\">\n        <album-navigation layout=\"vertical\"></album-navigation>\n    </div>\n\n</div>\n"
 
 /***/ }),
 
@@ -71283,7 +71283,7 @@ var NavbarVerticalStyle1Module = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"navbar-header\">\n\n    <div class=\"logo\">\n        <img class=\"logo-icon\" src=\"assets/images/logos/loadingPage.png\">\n        <span class=\"logo-text\">Album</span>\n    </div>\n\n    <button mat-icon-button class=\"toggle-sidebar-folded\"\n            (click)=\"toggleSidebarFolded()\" fxHide.lt-lg>\n        <mat-icon>menu</mat-icon>\n    </button>\n\n    <button mat-icon-button class=\"toggle-sidebar-opened\"\n            (click)=\"toggleSidebarOpened()\" fxHide.gt-md>\n        <mat-icon>arrow_back</mat-icon>\n    </button>\n\n</div>\n\n<div class=\"navbar-content\" albumPerfectScrollbar\n     [albumPerfectScrollbarOptions]=\"{suppressScrollX: true}\">\n    <album-navigation layout=\"vertical\"></album-navigation>\n</div>"
+module.exports = "<div class=\"navbar-header\">\n\n    <div class=\"logo\">\n        <img class=\"logo-icon\" src=\"./assets/images/logos/loadingPage.png\">\n        <span class=\"logo-text\">Album</span>\n    </div>\n\n    <button mat-icon-button class=\"toggle-sidebar-folded\"\n            (click)=\"toggleSidebarFolded()\" fxHide.lt-lg>\n        <mat-icon>menu</mat-icon>\n    </button>\n\n    <button mat-icon-button class=\"toggle-sidebar-opened\"\n            (click)=\"toggleSidebarOpened()\" fxHide.gt-md>\n        <mat-icon>arrow_back</mat-icon>\n    </button>\n\n</div>\n\n<div class=\"navbar-content\" albumPerfectScrollbar\n     [albumPerfectScrollbarOptions]=\"{suppressScrollX: true}\">\n    <album-navigation layout=\"vertical\"></album-navigation>\n</div>"
 
 /***/ }),
 
@@ -71673,7 +71673,7 @@ var QuickPanelModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar class=\"p-0 mat-elevation-z1\">\n\n    <div fxFlex fxFill fxLayout=\"row\" fxLayoutAlign=\"start center\">\n\n        <div fxFlex=\"1 0 auto\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n\n            <button mat-icon-button class=\"navbar-toggle-button\"\n                    *ngIf=\"!hiddenNavbar && !rightNavbar\" (click)=\"toggleSidebarOpen('navbar')\" fxHide.gt-md>\n                <mat-icon class=\"secondary-text\">menu</mat-icon>\n            </button>\n\n            <div class=\"toolbar-separator\" *ngIf=\"!hiddenNavbar && !rightNavbar\" fxHide.gt-md></div>\n\n            <div fxLayout=\"row\" fxLayoutAlign=\"start center\" *ngIf=\"horizontalNavbar\">\n                <div class=\"logo ml-16\">\n                    <img class=\"logo-icon\" src=\"assets/images/logos/loadingPage.png\">\n                </div>\n            </div>\n\n            <!-- <div class=\"px-8 px-mat-16\">\n                <album-shortcuts [navigation]=\"navigation\"></album-shortcuts>\n            </div> -->\n\n        </div>\n\n        <div class=\"\" fxFlex=\"0 1 auto\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n\n            <button mat-button [matMenuTriggerFor]=\"userMenu\"\n                    class=\"user-button\">\n                <div fxLayout=\"row\" fxLayoutAlign=\"center center\">\n                    <img class=\"avatar mr-0 mr-sm-16\" src=\"assets/images/samples/kar.JPG\">\n                    <span class=\"username mr-12\" fxHide fxShow.gt-sm>Karthik Nathani</span>\n                    <mat-icon class=\"s-16\" fxHide.xs>keyboard_arrow_down</mat-icon>\n                </div>\n            </button>\n\n            <mat-menu #userMenu=\"matMenu\" [overlapTrigger]=\"false\">\n\n                <button mat-menu-item  routerLink=\"/main/profile\" >\n                    <mat-icon>account_circle</mat-icon>\n                    <span>My Profile</span>\n                </button>\n            </mat-menu>\n            <div class=\"toolbar-separator\"></div>\n            <button mat-icon-button\n                    class=\"quick-panel-toggle-button\"\n                    (click)=\"toggleSidebarOpen('quickPanel')\"\n                    aria-label=\"Toggle quick panel\">\n                <mat-icon class=\"icon\">format_list_bulleted</mat-icon>\n            </button>\n\n            <div class=\"toolbar-separator\" *ngIf=\"!hiddenNavbar && rightNavbar\" fxHide fxShow.gt-xs></div>\n\n            <button mat-icon-button class=\"navbar-toggle-button\"\n                    *ngIf=\"!hiddenNavbar && rightNavbar\" (click)=\"toggleSidebarOpen('navbar')\" fxHide.gt-md>\n                <mat-icon class=\"secondary-text\">menu</mat-icon>\n            </button>\n\n        </div>\n\n    </div>\n\n</mat-toolbar>\n"
+module.exports = "<mat-toolbar class=\"p-0 mat-elevation-z1\">\n\n    <div fxFlex fxFill fxLayout=\"row\" fxLayoutAlign=\"start center\">\n\n        <div fxFlex=\"1 0 auto\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n\n            <button mat-icon-button class=\"navbar-toggle-button\"\n                    *ngIf=\"!hiddenNavbar && !rightNavbar\" (click)=\"toggleSidebarOpen('navbar')\" fxHide.gt-md>\n                <mat-icon class=\"secondary-text\">menu</mat-icon>\n            </button>\n\n            <div class=\"toolbar-separator\" *ngIf=\"!hiddenNavbar && !rightNavbar\" fxHide.gt-md></div>\n\n            <div fxLayout=\"row\" fxLayoutAlign=\"start center\" *ngIf=\"horizontalNavbar\">\n                <div class=\"logo ml-16\">\n                    <img class=\"logo-icon\" src=\"./assets/images/logos/loadingPage.png\">\n                </div>\n            </div>\n\n            <!-- <div class=\"px-8 px-mat-16\">\n                <album-shortcuts [navigation]=\"navigation\"></album-shortcuts>\n            </div> -->\n\n        </div>\n\n        <div class=\"\" fxFlex=\"0 1 auto\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n\n            <button mat-button [matMenuTriggerFor]=\"userMenu\"\n                    class=\"user-button\">\n                <div fxLayout=\"row\" fxLayoutAlign=\"center center\">\n                    <img class=\"avatar mr-0 mr-sm-16\" src=\"./assets/images/samples/kar.JPG\">\n                    <span class=\"username mr-12\" fxHide fxShow.gt-sm>Karthik Nathani</span>\n                    <mat-icon class=\"s-16\" fxHide.xs>keyboard_arrow_down</mat-icon>\n                </div>\n            </button>\n\n            <mat-menu #userMenu=\"matMenu\" [overlapTrigger]=\"false\">\n\n                <button mat-menu-item  routerLink=\"/main/profile\" >\n                    <mat-icon>account_circle</mat-icon>\n                    <span>My Profile</span>\n                </button>\n            </mat-menu>\n            <div class=\"toolbar-separator\"></div>\n            <button mat-icon-button\n                    class=\"quick-panel-toggle-button\"\n                    (click)=\"toggleSidebarOpen('quickPanel')\"\n                    aria-label=\"Toggle quick panel\">\n                <mat-icon class=\"icon\">format_list_bulleted</mat-icon>\n            </button>\n\n            <div class=\"toolbar-separator\" *ngIf=\"!hiddenNavbar && rightNavbar\" fxHide fxShow.gt-xs></div>\n\n            <button mat-icon-button class=\"navbar-toggle-button\"\n                    *ngIf=\"!hiddenNavbar && rightNavbar\" (click)=\"toggleSidebarOpen('navbar')\" fxHide.gt-md>\n                <mat-icon class=\"secondary-text\">menu</mat-icon>\n            </button>\n\n        </div>\n\n    </div>\n\n</mat-toolbar>\n"
 
 /***/ }),
 
