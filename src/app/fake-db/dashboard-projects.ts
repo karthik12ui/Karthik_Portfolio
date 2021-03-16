@@ -37,7 +37,7 @@ export class ProjectsDashboardDb {
             {
                 projectId : 'verizon',
                 allowedToViewRef: true,
-                referance: 'https://thingspaceportal.verizon.com/ccapp/#/setup/registration',
+                referance: 'https://thingspace.verizon.com/index.html',
                 projectAtClient : {
                           count: '1',
                           duration: '3',
@@ -53,13 +53,17 @@ export class ProjectsDashboardDb {
                           'projects'      : {
                               'tss' : 'Thing Space Portal - IoT',
                               'pnw' : 'Private Network - IoT',
+                              'oc2' : 'Operation Center - M2M',
+                              'nen' : 'Network Event Notifications - M2M',
                           },
                           'currentRange': 'pnw',
                           'data'        : {
                               'label': 'HOURS ON PROJECT',
                               'count': {
                                   'tss' : 1128,
-                                  'pnw': 1020
+                                  'pnw': 2300,
+                                  'nen': 1020,
+                                  'oc2': 592,
                               },
                           },
                           'detail'      : 'Will be updated soon...'
@@ -68,11 +72,11 @@ export class ProjectsDashboardDb {
                           'title' : 'Tasks',
                           'data'        : {
                               'label': 'COMPLETED TASKS',
-                              'count': 158,
-                              'enhancements': 132,
+                              'count': 230,
+                              'enhancements': 178,
                               'enhancementslabel': 'Completed Enhancements',
                               'defectslabel': 'Defects Resolved',
-                              'defects': 26
+                              'defects': 52
                           }
                       },
                       'widget3'      : {
@@ -80,13 +84,17 @@ export class ProjectsDashboardDb {
                           'projects'      : {
                               'tss' : 'Thing Space Portal - IoT',
                               'pnw' : 'Private Network - IoT',
+                              'oc2' : 'Operation Center - M2M',
+                              'nen' : 'Network Event Notifications - M2M',
                           },
                           'currentRange': 'pnw',
                           'data'        : {
                               'label': 'TECHNOLOGIES',
                               'count': {
                                   'tss' : 5,
-                                  'pnw' : 8,
+                                  'pnw' : 10,
+                                  'nen' : 11,
+                                  'oc2' : 10,
                               },
                           },
                       },
@@ -120,6 +128,8 @@ export class ProjectsDashboardDb {
                           'projects'     : {
                             'pnw' : 'Private Network - IoT',
                             'tss' : 'Thing Space Portal - IoT',
+                            'oc2' : 'Operation Center - M2M',
+                            'nen' : 'Network Event Notifications - M2M',
                           },
                           'currentProject': 'pnw',
                           'mainChart'  : {
@@ -174,6 +184,54 @@ export class ProjectsDashboardDb {
                                     'name' : 'Unit Testing',
                                     'value': 3
                                 }
+                            ],
+                            'nen': [
+                                {
+                                    'name' : 'Angular with Typescript',
+                                    'value': 50
+                                },
+                                {
+                                    'name' : 'HTML',
+                                    'value': 20
+                                },
+                                {
+                                    'name' : 'CSS / SCSS',
+                                    'value': 10
+                                },
+                                {
+                                    'name' : 'Angular Material',
+                                    'value': 10
+                                },
+                                {
+                                    'name' : 'Angular Flex',
+                                    'value': 10
+                                }
+                            ],
+                            'oc2': [
+                                {
+                                    'name' : 'Angular with Typescript',
+                                    'value': 50
+                                },
+                                {
+                                    'name' : 'HTML',
+                                    'value': 15
+                                },
+                                {
+                                    'name' : 'CSS / SCSS',
+                                    'value': 10
+                                },
+                                {
+                                    'name' : 'Angular Material',
+                                    'value': 10
+                                },
+                                {
+                                    'name' : 'Angular Flex',
+                                    'value': 10
+                                },
+                                {
+                                    'name' : 'Axa Config',
+                                    'value': 5
+                                }
                             ]
                           },
                       },
@@ -190,12 +248,22 @@ export class ProjectsDashboardDb {
                               {
                                   title: 'Thing Space Portal - IoT',
                                   // tslint:disable-next-line:max-line-length
-                                  desc: 'Created a Dynamic app to activate Mico SIM devices of multiple vendors. App holdes multiple features from Registation of user, displaying plans of subscriptions, activating devices and displaying the data usage and also processing monthly payments to renew subscription'
+                                  desc: 'Intelligently automates the view by user type logging in and completing checkout process for IoT based products purchases with Credit cards. Implemented 3D Security features and encryption for sensitive data during transactions.'
                               },
                               {
                                 title: 'Private Network - IoT',
                                 // tslint:disable-next-line:max-line-length
-                                desc: 'will be updated soon...'
+                                desc: 'PN - Project is intended to reduce the implementation time of Private Network  for B2B customers by automating the PN onboarding process for the customers with real time status update notification.'
+                            },
+                            {
+                                title: 'NEN – Network Event Notfications - M2M',
+                                // tslint:disable-next-line:max-line-length
+                                desc: 'Network Event Notification page allows to view planned and unplanned network maintenance events impacting Verizon services.'
+                            },
+                            {
+                                title: 'Operation Center - M2M',
+                                // tslint:disable-next-line:max-line-length
+                                desc: 'Created a dashboard view of the ECPD profile over public and private network with status of Onboarding across multiple systems TCM/ TSM, VHAP along with accounts and service plans associated to profile'
                             },
                           ]
                       },
@@ -203,7 +271,7 @@ export class ProjectsDashboardDb {
                       'images' : [
                           {
                               'id'  : 1,
-                              'url' : './assets/images/samples/Activation.PNG',
+                              'url' : './assets/images/samples/cc1.PNG',
                               'type': 'image'
                           },
                           {
@@ -220,7 +288,47 @@ export class ProjectsDashboardDb {
                               'id'  : 4,
                               'url' : './assets/images/samples/Summary.PNG',
                               'type': 'image'
-                          }
+                          },
+                          {
+                            'id'  : 5,
+                            'url' : './assets/images/samples/pn.png',
+                            'type': 'image'
+                        },
+                        {
+                            'id'  : 6,
+                            'url' : './assets/images/samples/pn2.png',
+                            'type': 'image'
+                        },
+                        {
+                            'id'  : 7,
+                            'url' : './assets/images/samples/nen1.png',
+                            'type': 'image'
+                        },
+                        {
+                            'id'  : 8,
+                            'url' : './assets/images/samples/nen2.png',
+                            'type': 'image'
+                        },
+                        {
+                            'id'  : 9,
+                            'url' : './assets/images/samples/nen3.png',
+                            'type': 'image'
+                        },
+                        {
+                            'id'  : 10,
+                            'url' : './assets/images/samples/oc.png',
+                            'type': 'image'
+                        },
+                        {
+                            'id'  : 11,
+                            'url' : './assets/images/samples/oc2.png',
+                            'type': 'image'
+                        },
+                        {
+                            'id'  : 12,
+                            'url' : './assets/images/samples/pn3.png',
+                            'type': 'image'
+                        }
                       ],
                       teamMembers: {
                           'title': 'Team Members',
@@ -245,14 +353,14 @@ export class ProjectsDashboardDb {
                                       avatar  : '',
                                       name    : 'Sachin',
                                       role: 'Angular Developer',
-                                      office  : 'On Site - NJ',
+                                      office  : 'Off Site - NJ',
                                       status   : true
                                   },
                                   {
                                       avatar  : '',
                                       name    : 'Revanth',
                                       role: 'Angular Developer',
-                                      office  : 'On Site - NJ',
+                                      office  : 'Off Site - NJ',
                                       status   : true
                                   },
                                   {
@@ -260,21 +368,21 @@ export class ProjectsDashboardDb {
                                       name    : 'Rukmini',
                                       role: 'JAVA Devloper',
                                       office  : 'On Site - NJ',
-                                      status   : true
+                                      status   : false
                                   },
                                   {
                                       avatar  : '',
                                       name    : 'Shivani',
                                       role: 'JAVA Devloper',
-                                      office  : 'On Site - NJ',
-                                      status   : true
+                                      office  : 'Off Site - NJ',
+                                      status   : false
                                   },
                                   {
                                     avatar  : '',
                                     name    : 'Himani',
                                     role: 'JAVA Devloper',
-                                    office  : 'On Site - NJ',
-                                    status   : true
+                                    office  : 'Off Site - NJ',
+                                    status   : false
                                 }
                               ]
                               }

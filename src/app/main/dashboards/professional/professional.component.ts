@@ -15,7 +15,7 @@ import { Subject } from 'rxjs';
 })
 export class ProfessionalComponent implements OnInit {
   widgets: any;
-  widget1SelectedYear = '2019';
+  widget1SelectedYear = '2021';
   widget5SelectedDay = 'today';
 
   /**

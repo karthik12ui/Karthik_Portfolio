@@ -60569,7 +60569,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************************!*\
   !*** ./node_modules/tslib/tslib.es6.js ***!
   \*****************************************/
-/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault */
+/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __createBinding, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -60582,10 +60582,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__createBinding", function() { return __createBinding; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function() { return __spread; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArrays", function() { return __spreadArrays; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function() { return __await; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function() { return __asyncGenerator; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function() { return __asyncDelegator; });
@@ -60593,19 +60595,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldGet", function() { return __classPrivateFieldGet; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldSet", function() { return __classPrivateFieldSet; });
 /*! *****************************************************************************
-Copyright (c) Microsoft Corporation. All rights reserved.
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-this file except in compliance with the License. You may obtain a copy of the
-License at http://www.apache.org/licenses/LICENSE-2.0
+Copyright (c) Microsoft Corporation.
 
-THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-MERCHANTABLITY OR NON-INFRINGEMENT.
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
 
-See the Apache Version 2.0 License for specific language governing permissions
-and limitations under the License.
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
 /* global Reflect, Promise */
 
@@ -60638,8 +60642,10 @@ function __rest(s, e) {
     for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
         t[p] = s[p];
     if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
     return t;
 }
 
@@ -60659,10 +60665,11 @@ function __metadata(metadataKey, metadataValue) {
 }
 
 function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 }
@@ -60695,19 +60702,25 @@ function __generator(thisArg, body) {
     }
 }
 
+function __createBinding(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}
+
 function __exportStar(m, exports) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 
 function __values(o) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
     if (m) return m.call(o);
-    return {
+    if (o && typeof o.length === "number") return {
         next: function () {
             if (o && i >= o.length) o = void 0;
             return { value: o && o[i++], done: !o };
         }
     };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 }
 
 function __read(o, n) {
@@ -60732,6 +60745,14 @@ function __spread() {
         ar = ar.concat(__read(arguments[i]));
     return ar;
 }
+
+function __spreadArrays() {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
 
 function __await(v) {
     return this instanceof __await ? (this.v = v, this) : new __await(v);
@@ -60778,6 +60799,21 @@ function __importStar(mod) {
 
 function __importDefault(mod) {
     return (mod && mod.__esModule) ? mod : { default: mod };
+}
+
+function __classPrivateFieldGet(receiver, privateMap) {
+    if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to get private field on non-instance");
+    }
+    return privateMap.get(receiver);
+}
+
+function __classPrivateFieldSet(receiver, privateMap, value) {
+    if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to set private field on non-instance");
+    }
+    privateMap.set(receiver, value);
+    return value;
 }
 
 
@@ -61406,7 +61442,7 @@ module.exports = "<div class=\"album-countdown\">\n\n    <div class=\"time days\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center; }\n  :host .album-countdown {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: center;\n    text-align: center; }\n  :host .album-countdown .time {\n      display: flex;\n      flex-direction: column;\n      padding: 0 12px; }\n  :host .album-countdown .time .value {\n        font-size: 34px;\n        line-height: 34px;\n        padding-bottom: 8px; }\n  :host .album-countdown .time .title {\n        color: rgba(0, 0, 0, 0.54); }\n"
+module.exports = ":host{display:flex;flex-direction:row;align-items:center;justify-content:center}:host .album-countdown{display:flex;flex-direction:row;align-items:center;justify-content:center;text-align:center}:host .album-countdown .time{display:flex;flex-direction:column;padding:0 12px}:host .album-countdown .time .value{font-size:34px;line-height:34px;padding-bottom:8px}:host .album-countdown .time .title{color:rgba(0,0,0,0.54)}\n"
 
 /***/ }),
 
@@ -61740,7 +61776,7 @@ var AlbumDemoModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  display: block;\n  padding: 8px;\n  background: #263238;\n  cursor: text;\n  overflow: auto;\n  -webkit-overflow-scrolling: touch; }\n"
+module.exports = ":host{display:block;padding:8px;background:#263238;cursor:text;overflow:auto;-webkit-overflow-scrolling:touch}\n"
 
 /***/ }),
 
@@ -62082,7 +62118,7 @@ module.exports = "<button mat-icon-button\n        type=\"button\"\n        clas
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".album-material-color-picker-menu {\n  width: 208px; }\n  .album-material-color-picker-menu .mat-menu-content {\n    padding: 0; }\n  .album-material-color-picker-menu .mat-menu-content .views {\n      display: flex;\n      flex-direction: column;\n      position: relative;\n      overflow: hidden;\n      min-height: 258px;\n      height: 308px;\n      background-color: #F7F7F7; }\n  .album-material-color-picker-menu .mat-menu-content .views .view {\n        position: absolute;\n        width: 208px;\n        height: 100%;\n        bottom: 0;\n        left: 0;\n        right: 0;\n        top: 0; }\n  .album-material-color-picker-menu .mat-menu-content .views .view .colors {\n          position: relative;\n          padding: 4px; }\n  .album-material-color-picker-menu .mat-menu-content .views .view .colors .color {\n            position: relative;\n            width: 46px;\n            height: 46px;\n            margin: 2px;\n            border-radius: 0;\n            cursor: pointer; }\n  .album-material-color-picker-menu .mat-menu-content .views .view .colors .color .label {\n              padding: 2px;\n              font-size: 10px; }\n  .album-material-color-picker-menu .mat-menu-content .views .view .colors .color mat-icon {\n              position: absolute;\n              top: 2px;\n              right: 2px;\n              font-size: 16px;\n              opacity: 0.7; }\n"
+module.exports = ".album-material-color-picker-menu{width:208px}.album-material-color-picker-menu .mat-menu-content{padding:0}.album-material-color-picker-menu .mat-menu-content .views{display:flex;flex-direction:column;position:relative;overflow:hidden;min-height:258px;height:308px;background-color:#F7F7F7}.album-material-color-picker-menu .mat-menu-content .views .view{position:absolute;width:208px;height:100%;bottom:0;left:0;right:0;top:0}.album-material-color-picker-menu .mat-menu-content .views .view .colors{position:relative;padding:4px}.album-material-color-picker-menu .mat-menu-content .views .view .colors .color{position:relative;width:46px;height:46px;margin:2px;border-radius:0;cursor:pointer}.album-material-color-picker-menu .mat-menu-content .views .view .colors .color .label{padding:2px;font-size:10px}.album-material-color-picker-menu .mat-menu-content .views .view .colors .color mat-icon{position:absolute;top:2px;right:2px;font-size:16px;opacity:0.7}\n"
 
 /***/ }),
 
@@ -62641,7 +62677,7 @@ module.exports = "<div class=\"nav\" [ngClass]=\"{'horizontal':layout === 'horiz
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n * @param target Which kind of high contrast setting to target. Defaults to `active`, can be\n *    `white-on-black` or `black-on-white`.\n */\n/* Theme for the ripple elements.*/\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\nalbum-navigation {\n  display: flex;\n  flex: 1 0 auto; }\nalbum-navigation > .nav {\n    margin: 0;\n    padding: 0;\n    width: 100%; }\n"
+module.exports = "album-navigation{display:flex;flex:1 0 auto}album-navigation>.nav{margin:0;padding:0;width:100%}\n"
 
 /***/ }),
 
@@ -63109,7 +63145,7 @@ module.exports = "<ng-container *ngIf=\"!item.hidden\">\n\n    <!-- normal colla
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".folded:not(.unfolded) :host .nav-link > span {\n  opacity: 0;\n  transition: opacity 200ms ease; }\n\n.folded:not(.unfolded) :host.open .children {\n  display: none !important; }\n\n:host .nav-link .collapsable-arrow {\n  transition: opacity .25s ease-in-out .1s, -webkit-transform .3s ease-in-out;\n  transition: transform .3s ease-in-out, opacity .25s ease-in-out .1s;\n  transition: transform .3s ease-in-out, opacity .25s ease-in-out .1s, -webkit-transform .3s ease-in-out;\n  -webkit-transform: rotate(0);\n          transform: rotate(0); }\n\n:host > .children {\n  overflow: hidden; }\n\n:host.open > .nav-link .collapsable-arrow {\n  -webkit-transform: rotate(90deg);\n          transform: rotate(90deg); }\n"
+module.exports = ".folded:not(.unfolded) :host .nav-link>span{opacity:0;transition:opacity 200ms ease}.folded:not(.unfolded) :host.open .children{display:none !important}:host .nav-link .collapsable-arrow{transition:opacity .25s ease-in-out .1s, -webkit-transform .3s ease-in-out;transition:transform .3s ease-in-out, opacity .25s ease-in-out .1s;transition:transform .3s ease-in-out, opacity .25s ease-in-out .1s, -webkit-transform .3s ease-in-out;-webkit-transform:rotate(0);transform:rotate(0)}:host>.children{overflow:hidden}:host.open>.nav-link .collapsable-arrow{-webkit-transform:rotate(90deg);transform:rotate(90deg)}\n"
 
 /***/ }),
 
@@ -63346,7 +63382,7 @@ module.exports = "<ng-container *ngIf=\"!item.hidden\">\n\n    <div class=\"grou
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".folded:not(.unfolded) :host > .group-title {\n  align-items: center; }\n  .folded:not(.unfolded) :host > .group-title > span {\n    opacity: 0;\n    transition: opacity 200ms ease; }\n  .folded:not(.unfolded) :host > .group-title:before {\n    content: '';\n    display: block;\n    position: absolute;\n    min-width: 1.6rem;\n    border-top: 2px solid;\n    opacity: 0.2; }\n"
+module.exports = ".folded:not(.unfolded) :host>.group-title{align-items:center}.folded:not(.unfolded) :host>.group-title>span{opacity:0;transition:opacity 200ms ease}.folded:not(.unfolded) :host>.group-title:before{content:'';display:block;position:absolute;min-width:1.6rem;border-top:2px solid;opacity:0.2}\n"
 
 /***/ }),
 
@@ -63419,7 +63455,7 @@ module.exports = "<ng-container *ngIf=\"!item.hidden\">\n\n    <!-- item.url -->
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".folded:not(.unfolded) :host .nav-link > .nav-link-title,\n.folded:not(.unfolded) :host .nav-link > .nav-link-badge {\n  opacity: 0;\n  transition: opacity 200ms ease; }\n"
+module.exports = ".folded:not(.unfolded) :host .nav-link>.nav-link-title,.folded:not(.unfolded) :host .nav-link>.nav-link-badge{opacity:0;transition:opacity 200ms ease}\n"
 
 /***/ }),
 
@@ -63492,7 +63528,7 @@ module.exports = "<ng-container *ngIf=\"visible\">\n\n    <mat-progress-bar colo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n * @param target Which kind of high contrast setting to target. Defaults to `active`, can be\n *    `white-on-black` or `black-on-white`.\n */\n/* Theme for the ripple elements.*/\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\nalbum-progress-bar {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  width: 100%;\n  z-index: 99998; }\nalbum-progress-bar mat-progress-bar .mat-progress-bar-buffer {\n    background-color: #C5C6CB !important; }\n"
+module.exports = "album-progress-bar{position:absolute;top:0;left:0;right:0;width:100%;z-index:99998}album-progress-bar mat-progress-bar .mat-progress-bar-buffer{background-color:#C5C6CB !important}\n"
 
 /***/ }),
 
@@ -63809,7 +63845,7 @@ module.exports = "<div class=\"album-search-bar\" [ngClass]=\"{'expanded':!colla
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n * @param target Which kind of high contrast setting to target. Defaults to `active`, can be\n *    `white-on-black` or `black-on-white`.\n */\n/* Theme for the ripple elements.*/\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\n:host .album-search-bar {\n  display: flex;\n  flex: 0 1 auto;\n  min-width: 64px;\n  height: 64px;\n  font-size: 13px; }\n@media (max-width: 599px) {\n    :host .album-search-bar {\n      height: 56px; } }\n:host .album-search-bar .album-search-bar-content {\n    display: flex;\n    flex: 1 1 auto;\n    align-items: center;\n    justify-content: flex-start; }\n:host .album-search-bar .album-search-bar-content .album-search-bar-expander,\n    :host .album-search-bar .album-search-bar-content .album-search-bar-collapser {\n      cursor: pointer;\n      padding: 0 20px;\n      margin: 0;\n      width: 64px !important;\n      height: 64px !important;\n      line-height: 64px !important; }\n@media (max-width: 599px) {\n        :host .album-search-bar .album-search-bar-content .album-search-bar-expander,\n        :host .album-search-bar .album-search-bar-content .album-search-bar-collapser {\n          height: 56px !important;\n          line-height: 56px !important; } }\n:host .album-search-bar .album-search-bar-content .album-search-bar-loader {\n      width: 64px !important;\n      height: 64px !important;\n      line-height: 64px !important; }\n@media (max-width: 599px) {\n        :host .album-search-bar .album-search-bar-content .album-search-bar-loader {\n          height: 56px !important;\n          line-height: 56px !important; } }\n:host .album-search-bar .album-search-bar-content .album-search-bar-collapser {\n      display: none; }\n:host .album-search-bar .album-search-bar-content #album-search-bar-input {\n      display: none;\n      flex: 1 0 auto;\n      min-height: 64px;\n      background-color: transparent;\n      font-size: 16px; }\n:host .album-search-bar.expanded {\n    position: absolute;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    z-index: 10; }\n:host .album-search-bar.expanded .album-search-bar-content #album-search-bar-input {\n      display: flex; }\n:host .album-search-bar.expanded .album-search-bar-content .album-search-bar-collapser {\n      display: flex; }\n:host body.album-search-bar-expanded #toolbar {\n  z-index: 999 !important; }\n"
+module.exports = ":host .album-search-bar{display:flex;flex:0 1 auto;min-width:64px;height:64px;font-size:13px}@media (max-width: 599px){:host .album-search-bar{height:56px}}:host .album-search-bar .album-search-bar-content{display:flex;flex:1 1 auto;align-items:center;justify-content:flex-start}:host .album-search-bar .album-search-bar-content .album-search-bar-expander,:host .album-search-bar .album-search-bar-content .album-search-bar-collapser{cursor:pointer;padding:0 20px;margin:0;width:64px !important;height:64px !important;line-height:64px !important}@media (max-width: 599px){:host .album-search-bar .album-search-bar-content .album-search-bar-expander,:host .album-search-bar .album-search-bar-content .album-search-bar-collapser{height:56px !important;line-height:56px !important}}:host .album-search-bar .album-search-bar-content .album-search-bar-loader{width:64px !important;height:64px !important;line-height:64px !important}@media (max-width: 599px){:host .album-search-bar .album-search-bar-content .album-search-bar-loader{height:56px !important;line-height:56px !important}}:host .album-search-bar .album-search-bar-content .album-search-bar-collapser{display:none}:host .album-search-bar .album-search-bar-content #album-search-bar-input{display:none;flex:1 0 auto;min-height:64px;background-color:transparent;font-size:16px}:host .album-search-bar.expanded{position:absolute;top:0;right:0;bottom:0;left:0;z-index:10}:host .album-search-bar.expanded .album-search-bar-content #album-search-bar-input{display:flex}:host .album-search-bar.expanded .album-search-bar-content .album-search-bar-collapser{display:flex}:host body.album-search-bar-expanded #toolbar{z-index:999 !important}\n"
 
 /***/ }),
 
@@ -63989,7 +64025,7 @@ module.exports = "<div id=\"album-shortcuts\" #shortcuts>\n\n    <div class=\"sh
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n * @param target Which kind of high contrast setting to target. Defaults to `active`, can be\n *    `white-on-black` or `black-on-white`.\n */\n/* Theme for the ripple elements.*/\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\n@media (max-width: 959px) {\n  :host #album-shortcuts.show-mobile-panel {\n    position: absolute;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    z-index: 99;\n    padding: 0 8px; }\n    :host #album-shortcuts.show-mobile-panel .shortcuts {\n      display: flex !important;\n      flex: 1;\n      height: 100%; } }\n"
+module.exports = "@media (max-width: 959px){:host #album-shortcuts.show-mobile-panel{position:absolute;top:0;right:0;bottom:0;left:0;z-index:99;padding:0 8px}:host #album-shortcuts.show-mobile-panel .shortcuts{display:flex !important;flex:1;height:100%}}\n"
 
 /***/ }),
 
@@ -64297,7 +64333,7 @@ module.exports = "<ng-content></ng-content>"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n * @param target Which kind of high contrast setting to target. Defaults to `active`, can be\n *    `white-on-black` or `black-on-white`.\n */\n/* Theme for the ripple elements.*/\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\nalbum-sidebar {\n  display: flex;\n  flex-direction: column;\n  flex: 1 0 auto;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  overflow-x: hidden;\n  overflow-y: auto;\n  -webkit-overflow-scrolling: touch;\n  width: 280px;\n  min-width: 280px;\n  max-width: 280px;\n  z-index: 1000;\n  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.35);\n  background: white; }\n@media (max-width: 599px) {\n    album-sidebar {\n      min-width: 0 !important;\n      max-width: 80vw !important;\n      width: 80vw !important; } }\nalbum-sidebar.left-positioned {\n    left: 0;\n    -webkit-transform: translateX(-100%);\n            transform: translateX(-100%); }\nalbum-sidebar.right-positioned {\n    right: 0;\n    -webkit-transform: translateX(100%);\n            transform: translateX(100%); }\nalbum-sidebar.open {\n    -webkit-transform: translateX(0);\n            transform: translateX(0); }\nalbum-sidebar.locked-open {\n    position: relative !important;\n    -webkit-transform: translateX(0) !important;\n            transform: translateX(0) !important; }\nalbum-sidebar.folded {\n    position: absolute !important;\n    top: 0;\n    bottom: 0; }\nalbum-sidebar.animations-enabled {\n    transition-property: width, min-width, max-width, -webkit-transform;\n    transition-property: transform, width, min-width, max-width;\n    transition-property: transform, width, min-width, max-width, -webkit-transform;\n    transition-duration: 150ms;\n    transition-timing-function: ease-in-out; }\n.album-sidebar-overlay {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  z-index: 999;\n  background-color: rgba(0, 0, 0, 0.6);\n  opacity: 0; }\n.album-sidebar-overlay.album-sidebar-overlay-invisible {\n    background-color: transparent; }\n"
+module.exports = "album-sidebar{display:flex;flex-direction:column;flex:1 0 auto;position:absolute;top:0;bottom:0;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;width:280px;min-width:280px;max-width:280px;z-index:1000;box-shadow:0 2px 8px 0 rgba(0,0,0,0.35);background:white}@media (max-width: 599px){album-sidebar{min-width:0 !important;max-width:80vw !important;width:80vw !important}}album-sidebar.left-positioned{left:0;-webkit-transform:translateX(-100%);transform:translateX(-100%)}album-sidebar.right-positioned{right:0;-webkit-transform:translateX(100%);transform:translateX(100%)}album-sidebar.open{-webkit-transform:translateX(0);transform:translateX(0)}album-sidebar.locked-open{position:relative !important;-webkit-transform:translateX(0) !important;transform:translateX(0) !important}album-sidebar.folded{position:absolute !important;top:0;bottom:0}album-sidebar.animations-enabled{transition-property:width, min-width, max-width, -webkit-transform;transition-property:transform, width, min-width, max-width;transition-property:transform, width, min-width, max-width, -webkit-transform;transition-duration:150ms;transition-timing-function:ease-in-out}.album-sidebar-overlay{position:absolute;top:0;bottom:0;left:0;right:0;z-index:999;background-color:rgba(0,0,0,0.6);opacity:0}.album-sidebar-overlay.album-sidebar-overlay-invisible{background-color:transparent}\n"
 
 /***/ }),
 
@@ -65112,7 +65148,7 @@ module.exports = "<div class=\"theme-options-panel\" albumPerfectScrollbar>\n\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n * @param target Which kind of high contrast setting to target. Defaults to `active`, can be\n *    `white-on-black` or `black-on-white`.\n */\n/* Theme for the ripple elements.*/\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\n@-webkit-keyframes rotating {\n  from {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  to {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n@keyframes rotating {\n  from {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  to {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n:host {\n  display: flex;\n  overflow: hidden; }\n:host .theme-options-panel {\n    display: flex;\n    flex-direction: column;\n    flex: 1 0 auto;\n    padding: 40px 24px 24px 24px;\n    overflow: auto;\n    -webkit-overflow-scrolling: touch; }\n:host .theme-options-panel .header {\n      display: flex;\n      flex: 0 1 auto;\n      margin-bottom: 32px;\n      align-items: center;\n      justify-content: space-between; }\n:host .theme-options-panel .header .title {\n        font-size: 20px;\n        font-weight: 500;\n        padding-left: 4px; }\n:host .theme-options-panel form {\n      display: flex;\n      flex: 1 1 auto;\n      flex-direction: column; }\n:host .theme-options-panel form .group {\n        display: flex;\n        flex: 1 0 auto;\n        flex-direction: column;\n        position: relative;\n        border: 1px solid rgba(0, 0, 0, 0.12);\n        border-radius: 2px;\n        padding: 28px 16px 8px 16px;\n        margin: 16px 0; }\n:host .theme-options-panel form .group h2 {\n          position: absolute;\n          top: -11px;\n          left: 8px;\n          margin: 0;\n          padding: 0 8px;\n          font-size: 16px;\n          font-weight: 500;\n          background: white;\n          color: rgba(0, 0, 0, 0.54); }\n:host .theme-options-panel form .group h3 {\n          font-size: 14px;\n          font-weight: 500;\n          color: rgba(0, 0, 0, 0.54);\n          margin: 24px 0 16px 0;\n          padding: 0; }\n:host .theme-options-panel form .group h3:first-of-type {\n            margin-top: 0; }\n"
+module.exports = "@-webkit-keyframes rotating{from{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotating{from{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}:host{display:flex;overflow:hidden}:host .theme-options-panel{display:flex;flex-direction:column;flex:1 0 auto;padding:40px 24px 24px 24px;overflow:auto;-webkit-overflow-scrolling:touch}:host .theme-options-panel .header{display:flex;flex:0 1 auto;margin-bottom:32px;align-items:center;justify-content:space-between}:host .theme-options-panel .header .title{font-size:20px;font-weight:500;padding-left:4px}:host .theme-options-panel form{display:flex;flex:1 1 auto;flex-direction:column}:host .theme-options-panel form .group{display:flex;flex:1 0 auto;flex-direction:column;position:relative;border:1px solid rgba(0,0,0,0.12);border-radius:2px;padding:28px 16px 8px 16px;margin:16px 0}:host .theme-options-panel form .group h2{position:absolute;top:-11px;left:8px;margin:0;padding:0 8px;font-size:16px;font-weight:500;background:white;color:rgba(0,0,0,0.54)}:host .theme-options-panel form .group h3{font-size:14px;font-weight:500;color:rgba(0,0,0,0.54);margin:24px 0 16px 0;padding:0}:host .theme-options-panel form .group h3:first-of-type{margin-top:0}\n"
 
 /***/ }),
 
@@ -65500,7 +65536,7 @@ module.exports = "<ng-content></ng-content>\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "album-widget {\n  display: block;\n  position: relative;\n  -webkit-perspective: 3000px;\n          perspective: 3000px;\n  padding: 12px; }\n  album-widget > div {\n    position: relative;\n    -webkit-transform-style: preserve-3d;\n            transform-style: preserve-3d;\n    transition: -webkit-transform 1s;\n    transition: transform 1s;\n    transition: transform 1s, -webkit-transform 1s; }\n  album-widget > .album-widget-front {\n    display: flex;\n    flex-direction: column;\n    flex: 1 1 auto;\n    position: relative;\n    overflow: hidden;\n    visibility: visible;\n    width: 100%;\n    opacity: 1;\n    z-index: 10;\n    border-radius: 2px;\n    transition: visibility 0s ease-in 0.2s, opacity 0s ease-in 0.2s, -webkit-transform 0.5s ease-out 0s;\n    transition: transform 0.5s ease-out 0s, visibility 0s ease-in 0.2s, opacity 0s ease-in 0.2s;\n    transition: transform 0.5s ease-out 0s, visibility 0s ease-in 0.2s, opacity 0s ease-in 0.2s, -webkit-transform 0.5s ease-out 0s;\n    -webkit-transform: rotateY(0deg);\n            transform: rotateY(0deg);\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden; }\n  album-widget > .album-widget-back {\n    display: block;\n    position: absolute;\n    top: 12px;\n    right: 12px;\n    bottom: 12px;\n    left: 12px;\n    overflow: hidden;\n    visibility: hidden;\n    opacity: 0;\n    z-index: 10;\n    transition: visibility 0s ease-in 0.2s, opacity 0s ease-in 0.2s, -webkit-transform 0.5s ease-out 0s;\n    transition: transform 0.5s ease-out 0s, visibility 0s ease-in 0.2s, opacity 0s ease-in 0.2s;\n    transition: transform 0.5s ease-out 0s, visibility 0s ease-in 0.2s, opacity 0s ease-in 0.2s, -webkit-transform 0.5s ease-out 0s;\n    -webkit-transform: rotateY(180deg);\n            transform: rotateY(180deg);\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden; }\n  album-widget > .album-widget-back [albumWidgetToggle] {\n      position: absolute;\n      top: 0;\n      right: 0; }\n  album-widget.flipped > .album-widget-front {\n    visibility: hidden;\n    opacity: 0;\n    -webkit-transform: rotateY(180deg);\n            transform: rotateY(180deg); }\n  album-widget.flipped > .album-widget-back {\n    display: block;\n    visibility: visible;\n    opacity: 1;\n    -webkit-transform: rotateY(360deg);\n            transform: rotateY(360deg); }\n  album-widget .mat-form-field.mat-form-field-type-mat-select .mat-form-field-wrapper {\n    padding: 16px 0; }\n  album-widget .mat-form-field.mat-form-field-type-mat-select .mat-form-field-wrapper .mat-form-field-infix {\n      border: none;\n      padding: 0; }\n  album-widget .mat-form-field.mat-form-field-type-mat-select .mat-form-field-underline {\n    display: none; }\n"
+module.exports = "album-widget{display:block;position:relative;-webkit-perspective:3000px;perspective:3000px;padding:12px}album-widget>div{position:relative;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;transition:-webkit-transform 1s;transition:transform 1s;transition:transform 1s, -webkit-transform 1s}album-widget>.album-widget-front{display:flex;flex-direction:column;flex:1 1 auto;position:relative;overflow:hidden;visibility:visible;width:100%;opacity:1;z-index:10;border-radius:2px;transition:visibility 0s ease-in 0.2s, opacity 0s ease-in 0.2s, -webkit-transform 0.5s ease-out 0s;transition:transform 0.5s ease-out 0s, visibility 0s ease-in 0.2s, opacity 0s ease-in 0.2s;transition:transform 0.5s ease-out 0s, visibility 0s ease-in 0.2s, opacity 0s ease-in 0.2s, -webkit-transform 0.5s ease-out 0s;-webkit-transform:rotateY(0deg);transform:rotateY(0deg);-webkit-backface-visibility:hidden;backface-visibility:hidden}album-widget>.album-widget-back{display:block;position:absolute;top:12px;right:12px;bottom:12px;left:12px;overflow:hidden;visibility:hidden;opacity:0;z-index:10;transition:visibility 0s ease-in 0.2s, opacity 0s ease-in 0.2s, -webkit-transform 0.5s ease-out 0s;transition:transform 0.5s ease-out 0s, visibility 0s ease-in 0.2s, opacity 0s ease-in 0.2s;transition:transform 0.5s ease-out 0s, visibility 0s ease-in 0.2s, opacity 0s ease-in 0.2s, -webkit-transform 0.5s ease-out 0s;-webkit-transform:rotateY(180deg);transform:rotateY(180deg);-webkit-backface-visibility:hidden;backface-visibility:hidden}album-widget>.album-widget-back [albumWidgetToggle]{position:absolute;top:0;right:0}album-widget.flipped>.album-widget-front{visibility:hidden;opacity:0;-webkit-transform:rotateY(180deg);transform:rotateY(180deg)}album-widget.flipped>.album-widget-back{display:block;visibility:visible;opacity:1;-webkit-transform:rotateY(360deg);transform:rotateY(360deg)}album-widget .mat-form-field.mat-form-field-type-mat-select .mat-form-field-wrapper{padding:16px 0}album-widget .mat-form-field.mat-form-field-type-mat-select .mat-form-field-wrapper .mat-form-field-infix{border:none;padding:0}album-widget .mat-form-field.mat-form-field-type-mat-select .mat-form-field-underline{display:none}\n"
 
 /***/ }),
 
@@ -68198,7 +68234,7 @@ module.exports = "<!-- PROGRESS BAR -->\n<album-progress-bar></album-progress-ba
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n * @param target Which kind of high contrast setting to target. Defaults to `active`, can be\n *    `white-on-black` or `black-on-white`.\n */\n/* Theme for the ripple elements.*/\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\n:host {\n  position: relative;\n  display: flex;\n  flex: 1 1 auto;\n  width: 100%;\n  height: 100%;\n  min-width: 0; }\n:host .theme-options-button {\n    position: absolute;\n    top: 160px;\n    right: 0;\n    width: 48px;\n    height: 48px;\n    line-height: 48px;\n    text-align: center;\n    cursor: pointer;\n    border-radius: 0;\n    margin: 0;\n    pointer-events: auto;\n    opacity: .90;\n    z-index: 998; }\n@media (min-width: 1280px) {\n      :host .theme-options-button.right-side-panel {\n        right: 70px; } }\n:host .theme-options-button.side-panel-hidden {\n      right: 0 !important; }\n:host .theme-options-button mat-icon {\n      -webkit-animation: rotating 3s linear infinite;\n              animation: rotating 3s linear infinite; }\n:host .theme-options-button:hover {\n      opacity: 1; }\n:host .theme-options-sidebar {\n    width: 360px;\n    min-width: 360px;\n    max-width: 360px; }\n"
+module.exports = ":host{position:relative;display:flex;flex:1 1 auto;width:100%;height:100%;min-width:0}:host .theme-options-button{position:absolute;top:160px;right:0;width:48px;height:48px;line-height:48px;text-align:center;cursor:pointer;border-radius:0;margin:0;pointer-events:auto;opacity:.90;z-index:998}@media (min-width: 1280px){:host .theme-options-button.right-side-panel{right:70px}}:host .theme-options-button.side-panel-hidden{right:0 !important}:host .theme-options-button mat-icon{-webkit-animation:rotating 3s linear infinite;animation:rotating 3s linear infinite}:host .theme-options-button:hover{opacity:1}:host .theme-options-sidebar{width:360px;min-width:360px;max-width:360px}\n"
 
 /***/ }),
 
@@ -68489,7 +68525,7 @@ var ProfessionalDashboardDb = /** @class */ (function () {
                 '2012': [
                     {
                         label: 'Hours',
-                        data: [80, 80, 80, 160, 166, 170, 160, 140, 160, 160, 170, 80],
+                        data: [80, 80, 80, 160, 166, 170, 160, 140, 160, 160, 170, 160],
                         fill: 'start'
                     }
                 ],
@@ -68538,7 +68574,21 @@ var ProfessionalDashboardDb = /** @class */ (function () {
                 '2019': [
                     {
                         label: 'Hours',
-                        data: [168, 160, 168, 112, 176, 160, 176, 176, 80, 0, 0, 0],
+                        data: [168, 160, 168, 112, 176, 160, 176, 176, 80, 168, 174, 168],
+                        fill: 'start'
+                    }
+                ],
+                '2020': [
+                    {
+                        label: 'Hours',
+                        data: [168, 160, 172, 162, 160, 176, 176, 160, 168, 0, 92, 168],
+                        fill: 'start'
+                    }
+                ],
+                '2021': [
+                    {
+                        label: 'Hours',
+                        data: [168, 160, 168, 112, 0, 0, 0, 0, 0, 0, 0, 0],
                         fill: 'start'
                     }
                 ],
@@ -68627,7 +68677,11 @@ var ProfessionalDashboardDb = /** @class */ (function () {
                 },
                 {
                     name: 'Coding',
-                    value: 60,
+                    value: 50,
+                },
+                {
+                    name: 'CI/CD (Build / Deployment)',
+                    value: 10,
                 },
                 {
                     name: 'Unit Testing',
@@ -68641,23 +68695,31 @@ var ProfessionalDashboardDb = /** @class */ (function () {
                 {
                     id: 'verizon',
                     label: 'Project 1',
-                    projectsWorked: 1,
+                    projectsWorked: 4,
                     projectsWorkedSubTitle: 'Projects Worked @ Telecommunications company',
-                    projectDuration: 13,
-                    technologiesUsed: 8,
+                    projectDuration: 30,
+                    technologiesUsed: 10,
                     content: {
-                        'content': '<h1>As a Angular Developer</h1>' +
+                        'content': '<h1>As a UX / UI Angular Developer</h1>' +
                             '<ul>' +
                             '<li>' +
-                            'Designed and Developed a Dynamic application that can adopt processing and activating multiple brand devices. Once Activation is successful application provides the details and summary along with the other supporting functionality' +
+                            'Responsible for designing and developing responsive customer facing, admin managed Private Network for IoT devices and ThingSpace Services application using HTML5, SASS, Angular flux, Angular material and Angular 7 and 9' +
                             '</li>' +
                             '<br>' +
                             '<li>' +
-                            'Application has Dynamic content that chnages based on users directed to application that include page content, subscription plan, form fields and its validation' +
+                            'Leading team as a front-end designer / developer participated in the technical design review process to ensure high quality technical designs to identify deliver best practices and center of excellence touch point meetings with demos.' +
                             '</li>' +
                             '<br>' +
                             '<li>' +
-                            'Created the application with Angular 6+ and has resuable components and services which can handle dynamic alerts error messages modals and more.' +
+                            'Designing both template and Reactive based Forms with cross field custom form validations. Produced visually appealing designs focused on usability, utility, UX, cross-browser compatibility and SEO /web standards.' +
+                            '</li>' +
+                            '<br>' +
+                            '<li>' +
+                            'Designed and developed by aligning with security principles and standards of Verizon. Cleared all critical and high-level security issues if any request comes as part of audit scans like fortify, black duck, pen tests.' +
+                            '</li>' +
+                            '<br>' +
+                            '<li>' +
+                            'Developed data visualization charts by creating RTC module (Real time communication) with socket i.o to broadcast real time onboarding status on dashboards.' +
                             '</li>'
                     },
                 },
@@ -68672,7 +68734,7 @@ var ProfessionalDashboardDb = /** @class */ (function () {
                         'content': '<h1>As a Angular Developer</h1>' +
                             '<ul>' +
                             '<li>' +
-                            'Responsible for Developing Application using HTML5, CSS3, Flex, Bootstrap, Angular 2+ for Agents and Clients Enterprise Application called Small Commercial Insurance Portal (Marketplace) and Client Center Portal.' +
+                            'Designed and Developed singe page application using HTML5, CSS3, Flex, Bootstrap, Angular 2+ with Redux architecture for Clients Enterprise Application Client Center Portal.' +
                             '</li>' +
                             '<br>' +
                             '<li>' +
@@ -68680,7 +68742,11 @@ var ProfessionalDashboardDb = /** @class */ (function () {
                             '</li>' +
                             '<br>' +
                             '<li>' +
-                            'Implemented Typescript Reusable multi slot content projection, parent and child components and services to consume REST APIs using Component based architecture with Angular Cli.' +
+                            'Developed with ECMA Script 6 features for build of JSX and ES2015 (ES6) webpack design pattern on Components and Services for shared data between Components.' +
+                            '</li>' +
+                            '<br>' +
+                            '<li>' +
+                            'Created custom Pipes to filter data on template and using built-in Pipes along with them, also implemented filtering, sorting methods to display the ordered list based on status of order.' +
                             '</li>'
                     },
                 },
@@ -68695,11 +68761,15 @@ var ProfessionalDashboardDb = /** @class */ (function () {
                         'content': '<h1>As a UX Designer / UI Developer</h1>' +
                             '<ul>' +
                             '<li>' +
-                            'Designed prototypes and rich Responsive User Interface applications using HTML5, CSS3, JavaScript, jQuery, AJAX, JSON, AngularJS, High Charts and Bootstrap.' +
+                            'Worked at Department of Education for the projects OEDS Redesign and EAS Dashboard and involved in various phases of development life cycle from requirement analysis, design, implementation and testing.' +
                             '</li>' +
                             '<br>' +
                             '<li>' +
-                            'Implemented MVC architectures by creating modules, controllers, templates, custom directives, pipes and custom filters with Angular JS 1.2' +
+                            'Built rich prototypes and applications using HTML5, CSS3, SASS, JavaScript, jQuery, AJAX, JSON, AngularJS, High Charts and Bootstrap' +
+                            '</li>' +
+                            '<br>' +
+                            '<li>' +
+                            'Worked on AngularJS framework including MVC architectures, different modules, specific controllers, templates, custom directives and custom filters and used AngularJS for dependency injections' +
                             '</li>' +
                             '<br>' +
                             '<li>' +
@@ -68712,21 +68782,25 @@ var ProfessionalDashboardDb = /** @class */ (function () {
                     label: 'Project 4',
                     projectsWorked: 1,
                     projectsWorkedSubTitle: 'Projects Worked @ Independent Review Board',
-                    projectDuration: 4,
+                    projectDuration: 8,
                     technologiesUsed: 5,
                     content: {
                         'content': '<h1>As a MEAN Stack Developer</h1>' +
                             '<ul>' +
                             '<li>' +
-                            'Worked with clients and Senior User Experience Designers to understand their branding strategies and design goals to define visual design strategy, layout, and features to design their web sites/applications.' +
+                            'Worked as a MEAN stack developer on NodeJS applications using express as middleware, JWT, MongoDB and Angular JS as client-side code, to building secure RESTful API development as light weight application.' +
                             '</li>' +
                             '<br>' +
                             '<li>' +
-                            'Used client side scripting languages as JavaScript added collections of list of objects in database Mongo DB Locally with Robo Mongo and Implemented Schemas to store data and retrieve data from the Mongo DB.' +
+                            'As a User Experience Designer designed branding strategies and goals to define visual design strategy, layout, and features to design their web sites/applications.' +
                             '</li>' +
                             '<br>' +
                             '<li>' +
-                            'Developed a Schema to Send an E-mail Notifications to the users who has an account in the Application with Alert Message when were ever an event is added to the application or removed from the application.' +
+                            'Created shared modules, templates, custom directives and custom filters and with AngularJS for dependency injection.' +
+                            '</li>' +
+                            '<br>' +
+                            '<li>' +
+                            'Developed broadcasting of Live events using Sockets.io packages for features involved in application of live streaming real time data to multiple customers logged to same event.' +
                             '</li>'
                     },
                 },
@@ -68734,22 +68808,31 @@ var ProfessionalDashboardDb = /** @class */ (function () {
                     id: 'ads',
                     label: 'Project 5',
                     projectsWorked: 1,
-                    projectsWorkedSubTitle: 'Projects Worked @ ADS Pipe',
-                    projectDuration: 14,
+                    projectsWorkedSubTitle: 'Projects Worked @ :  Collaborate Solutions, Inc',
+                    projectDuration: 6,
                     technologiesUsed: 5,
                     content: {
-                        'content': '<h1>As a UX Designer / UI Developer</h1>' +
+                        'content': '<h1>As a Software Developer</h1>' +
                             '<ul>' +
                             '<li>' +
-                            'Designed mockups, GUI layouts by using HTML, DHTML, XHTML, XML, CSS and JavaScript in securing the application using form-based authentication' +
+                            'Designed mockups, GUI layouts by using HTML5, CSS and JavaScript with table-less designs meeting W3C standards.' +
                             '</li>' +
                             '<br>' +
                             '<li>' +
-                            'Performed Client side validation with bootstrap feedback icons and JQuery.' +
+                            'Created forms with validation displaying inline error messages along with the handling of masking and format patterns for input fields and developing application aligning with security principles.' +
                             '</li>' +
                             '<br>' +
                             '<li>' +
-                            'Created Email Template for Invoices which generates with batch process and implemented Nested Views with the help of AngularJS UI-view & UI-SREF, implemented custom directives for reusable components used across the application.' +
+                            'Used JQuery for creating reusable widgets for calendar drag and drop file uploads, table grids, form validations integrating with RESTful services.' +
+                            '</li>'
+                            +
+                                '<br>' +
+                            '<li>' +
+                            'Developed optimized schema designs to upload and retrieve documents and images in mongoDB using gridFS. Performed AES level encryption schemas to store sensitive data.' +
+                            '</li>' +
+                            '<br>' +
+                            '<li>' +
+                            '•	Resolved cross-browser issues and web site usability issues with visually appealing designs focused on usability, utility, UX, cross-browser compatibility and SEO /web standards.' +
                             '</li>'
                     },
                 },
@@ -68761,18 +68844,18 @@ var ProfessionalDashboardDb = /** @class */ (function () {
                     projectDuration: 20,
                     technologiesUsed: 4,
                     content: {
-                        'content': '<h1>As a UX / UI Developer</h1>' +
+                        'content': '<h1>As a :  Software Developer</h1>' +
                             '<ul>' +
                             '<li>' +
-                            'Responsible for checking cross browser compatibility and hence worked on different browsers like safari, internet explorer, Firefox and Google chrome.' +
+                            'As an intern worked closely with Business Analysts in understanding the technical requirements of each project and prepared the use cases for different functionalities and designs.' +
                             '</li>' +
                             '<br>' +
                             '<li>' +
-                            'Used JQuery for creating various widgets, data manipulation, data traversing, form validations, create the content on the fly depend on the user request, implementing Ajax features for the application.' +
+                            'Work in close collaboration with internal customers and teams to develop strategies that address product content and overall user experience design for Catalyst’s clients.' +
                             '</li>' +
                             '<br>' +
                             '<li>' +
-                            'Implemented various Validation Controls for form validation and implemented custom validation controls with JavaScript validation controls.' +
+                            'Created JQuery scripts for basic animation and end user screen customization purposes.' +
                             '</li>'
                     },
                 }
@@ -68836,7 +68919,7 @@ var ProjectsDashboardDb = /** @class */ (function () {
             {
                 projectId: 'verizon',
                 allowedToViewRef: true,
-                referance: 'https://thingspaceportal.verizon.com/ccapp/#/setup/registration',
+                referance: 'https://thingspace.verizon.com/index.html',
                 projectAtClient: {
                     count: '1',
                     duration: '3',
@@ -68852,13 +68935,17 @@ var ProjectsDashboardDb = /** @class */ (function () {
                     'projects': {
                         'tss': 'Thing Space Portal - IoT',
                         'pnw': 'Private Network - IoT',
+                        'oc2': 'Operation Center - M2M',
+                        'nen': 'Network Event Notifications - M2M',
                     },
                     'currentRange': 'pnw',
                     'data': {
                         'label': 'HOURS ON PROJECT',
                         'count': {
                             'tss': 1128,
-                            'pnw': 1020
+                            'pnw': 2300,
+                            'nen': 1020,
+                            'oc2': 592,
                         },
                     },
                     'detail': 'Will be updated soon...'
@@ -68867,11 +68954,11 @@ var ProjectsDashboardDb = /** @class */ (function () {
                     'title': 'Tasks',
                     'data': {
                         'label': 'COMPLETED TASKS',
-                        'count': 158,
-                        'enhancements': 132,
+                        'count': 230,
+                        'enhancements': 178,
                         'enhancementslabel': 'Completed Enhancements',
                         'defectslabel': 'Defects Resolved',
-                        'defects': 26
+                        'defects': 52
                     }
                 },
                 'widget3': {
@@ -68879,13 +68966,17 @@ var ProjectsDashboardDb = /** @class */ (function () {
                     'projects': {
                         'tss': 'Thing Space Portal - IoT',
                         'pnw': 'Private Network - IoT',
+                        'oc2': 'Operation Center - M2M',
+                        'nen': 'Network Event Notifications - M2M',
                     },
                     'currentRange': 'pnw',
                     'data': {
                         'label': 'TECHNOLOGIES',
                         'count': {
                             'tss': 5,
-                            'pnw': 8,
+                            'pnw': 10,
+                            'nen': 11,
+                            'oc2': 10,
                         },
                     },
                 },
@@ -68919,6 +69010,8 @@ var ProjectsDashboardDb = /** @class */ (function () {
                     'projects': {
                         'pnw': 'Private Network - IoT',
                         'tss': 'Thing Space Portal - IoT',
+                        'oc2': 'Operation Center - M2M',
+                        'nen': 'Network Event Notifications - M2M',
                     },
                     'currentProject': 'pnw',
                     'mainChart': {
@@ -68973,6 +69066,54 @@ var ProjectsDashboardDb = /** @class */ (function () {
                                 'name': 'Unit Testing',
                                 'value': 3
                             }
+                        ],
+                        'nen': [
+                            {
+                                'name': 'Angular with Typescript',
+                                'value': 50
+                            },
+                            {
+                                'name': 'HTML',
+                                'value': 20
+                            },
+                            {
+                                'name': 'CSS / SCSS',
+                                'value': 10
+                            },
+                            {
+                                'name': 'Angular Material',
+                                'value': 10
+                            },
+                            {
+                                'name': 'Angular Flex',
+                                'value': 10
+                            }
+                        ],
+                        'oc2': [
+                            {
+                                'name': 'Angular with Typescript',
+                                'value': 50
+                            },
+                            {
+                                'name': 'HTML',
+                                'value': 15
+                            },
+                            {
+                                'name': 'CSS / SCSS',
+                                'value': 10
+                            },
+                            {
+                                'name': 'Angular Material',
+                                'value': 10
+                            },
+                            {
+                                'name': 'Angular Flex',
+                                'value': 10
+                            },
+                            {
+                                'name': 'Axa Config',
+                                'value': 5
+                            }
                         ]
                     },
                 },
@@ -68989,12 +69130,22 @@ var ProjectsDashboardDb = /** @class */ (function () {
                         {
                             title: 'Thing Space Portal - IoT',
                             // tslint:disable-next-line:max-line-length
-                            desc: 'Created a Dynamic app to activate Mico SIM devices of multiple vendors. App holdes multiple features from Registation of user, displaying plans of subscriptions, activating devices and displaying the data usage and also processing monthly payments to renew subscription'
+                            desc: 'Intelligently automates the view by user type logging in and completing checkout process for IoT based products purchases with Credit cards. Implemented 3D Security features and encryption for sensitive data during transactions.'
                         },
                         {
                             title: 'Private Network - IoT',
                             // tslint:disable-next-line:max-line-length
-                            desc: 'will be updated soon...'
+                            desc: 'PN - Project is intended to reduce the implementation time of Private Network  for B2B customers by automating the PN onboarding process for the customers with real time status update notification.'
+                        },
+                        {
+                            title: 'NEN – Network Event Notfications - M2M',
+                            // tslint:disable-next-line:max-line-length
+                            desc: 'Network Event Notification page allows to view planned and unplanned network maintenance events impacting Verizon services.'
+                        },
+                        {
+                            title: 'Operation Center - M2M',
+                            // tslint:disable-next-line:max-line-length
+                            desc: 'Created a dashboard view of the ECPD profile over public and private network with status of Onboarding across multiple systems TCM/ TSM, VHAP along with accounts and service plans associated to profile'
                         },
                     ]
                 },
@@ -69002,7 +69153,7 @@ var ProjectsDashboardDb = /** @class */ (function () {
                 'images': [
                     {
                         'id': 1,
-                        'url': './assets/images/samples/Activation.PNG',
+                        'url': './assets/images/samples/cc1.PNG',
                         'type': 'image'
                     },
                     {
@@ -69018,6 +69169,46 @@ var ProjectsDashboardDb = /** @class */ (function () {
                     {
                         'id': 4,
                         'url': './assets/images/samples/Summary.PNG',
+                        'type': 'image'
+                    },
+                    {
+                        'id': 5,
+                        'url': './assets/images/samples/pn.png',
+                        'type': 'image'
+                    },
+                    {
+                        'id': 6,
+                        'url': './assets/images/samples/pn2.png',
+                        'type': 'image'
+                    },
+                    {
+                        'id': 7,
+                        'url': './assets/images/samples/nen1.png',
+                        'type': 'image'
+                    },
+                    {
+                        'id': 8,
+                        'url': './assets/images/samples/nen2.png',
+                        'type': 'image'
+                    },
+                    {
+                        'id': 9,
+                        'url': './assets/images/samples/nen3.png',
+                        'type': 'image'
+                    },
+                    {
+                        'id': 10,
+                        'url': './assets/images/samples/oc.png',
+                        'type': 'image'
+                    },
+                    {
+                        'id': 11,
+                        'url': './assets/images/samples/oc2.png',
+                        'type': 'image'
+                    },
+                    {
+                        'id': 12,
+                        'url': './assets/images/samples/pn3.png',
                         'type': 'image'
                     }
                 ],
@@ -69044,14 +69235,14 @@ var ProjectsDashboardDb = /** @class */ (function () {
                                 avatar: '',
                                 name: 'Sachin',
                                 role: 'Angular Developer',
-                                office: 'On Site - NJ',
+                                office: 'Off Site - NJ',
                                 status: true
                             },
                             {
                                 avatar: '',
                                 name: 'Revanth',
                                 role: 'Angular Developer',
-                                office: 'On Site - NJ',
+                                office: 'Off Site - NJ',
                                 status: true
                             },
                             {
@@ -69059,21 +69250,21 @@ var ProjectsDashboardDb = /** @class */ (function () {
                                 name: 'Rukmini',
                                 role: 'JAVA Devloper',
                                 office: 'On Site - NJ',
-                                status: true
+                                status: false
                             },
                             {
                                 avatar: '',
                                 name: 'Shivani',
                                 role: 'JAVA Devloper',
-                                office: 'On Site - NJ',
-                                status: true
+                                office: 'Off Site - NJ',
+                                status: false
                             },
                             {
                                 avatar: '',
                                 name: 'Himani',
                                 role: 'JAVA Devloper',
-                                office: 'On Site - NJ',
-                                status: true
+                                office: 'Off Site - NJ',
+                                status: false
                             }
                         ]
                     }
@@ -70303,19 +70494,24 @@ var KarthikProfileFakeDb = /** @class */ (function () {
                 'Hyderbad, India',
                 'Columbus-OH, USA',
                 'Seattle-WA, USA',
-                'Whitehouse Station-NJ, USA'
+                'Whitehouse Station-NJ, USA',
+                'Bridgewater-NJ, USA'
             ],
             // tslint:disable-next-line:max-line-length
-            'about': 'Over 7 years of extensive professional experience with HTML5, XHTML, DOM, CSS3, JavaScript, AJAX and Leading User Interface (UI) web applications. Extremely proficient with web Development using JavaScript, especially using jQuery, AngularJS (1.x&2+), Bootstrap and jQuery UI frameworks in AJAX driven websites. Excellent skills in gathering business requirements and designing a Single Page Applications Framework using AngularJS custom modules which can be reusable in multiple projects.'
+            'about': 'Over nine years of professional experience in designing and developing web applications using HTML5, CSS3, SCSS, Angular Flux, Angular Material, Bootstrap, and leading Javascript and Typescript frameworks (Angular 1.x & 2, 4, 6, 7, 9 and React) for AJAX-driven websites. •	Excellent skills in gathering business requirements and designing and developing a Single Page Application MVC framework with Angular CLI. Expertise in developing MEAN stack applications using NodeJS, express as middleware, JWT, MongoDB and Angular as client-side code, to building secure RESTful API development as light weight application.'
         },
         'work': {
             'occupation': 'UX / UI Developer',
             // tslint:disable-next-line:max-line-length
-            'skills': 'HTML, CSS, SCSS, Javascript, Typescript, Angular(1.X,2,4,5+), Angular Material, Bootstrap, High Charts, D3 Charts, Data Tables, NodeJS, SQL',
+            'skills': 'HTML5, CSS3, SCSS, XML, Web Standards (XHTML, CSS), Angular, REACT, jQuery, Angular Flux, Angular Material, Bootstrap, NodeJS, MongoDB, Express, High Charts, D3 Charts, Sockets.io, Tableau, R studio, SQL, New Relic, Google analytics, Kibana, Google cloud platform',
             'jobs': [
                 {
+                    'company': 'Verizon',
+                    'date': 'Septemeber 2018 - Present'
+                },
+                {
                     'company': 'Chubb Limited, Insurance company',
-                    'date': 'April 2017 - Present'
+                    'date': 'April 2017 - August 2018'
                 },
                 {
                     'company': 'Department of Education',
@@ -70323,11 +70519,11 @@ var KarthikProfileFakeDb = /** @class */ (function () {
                 },
                 {
                     'company': 'Quorum Review IRB',
-                    'date': 'June 2015 - October 2015'
+                    'date': 'March 2015 - November 2015'
                 },
                 {
-                    'company': 'ADS Pipe',
-                    'date': 'March 2014 - June 2015'
+                    'company': 'Collaborate Solutions, Inc',
+                    'date': 'September 2014 - March 2015'
                 },
                 {
                     'company': 'Smart Search Inc',
@@ -70516,7 +70712,7 @@ module.exports = "\n<router-outlet *ngIf=\"true\"></router-outlet>"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "content {\n  position: relative;\n  display: flex;\n  z-index: 1;\n  flex: 1 0 auto; }\n  content > *:not(router-outlet) {\n    display: flex;\n    flex: 1 0 auto;\n    width: 100%;\n    min-width: 100%; }\n"
+module.exports = "content{position:relative;display:flex;z-index:1;flex:1 0 auto}content>*:not(router-outlet){display:flex;flex:1 0 auto;width:100%;min-width:100%}\n"
 
 /***/ }),
 
@@ -70618,7 +70814,7 @@ var ContentModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar>\n\n    <div fxLayout=\"row\" fxLayoutAlign=\"center center\" fxLayoutAlign.gt-xs=\"space-between center\" fxFlex>\n        <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\n            <a mat-button>Karthik's Album</a>\n            <span>&bull;</span>\n            <a mat-button>@2018</a>\n        </div>\n\n\n    </div>\n\n</mat-toolbar>\n"
+module.exports = "<mat-toolbar>\n\n    <div fxLayout=\"row\" fxLayoutAlign=\"center center\" fxLayoutAlign.gt-xs=\"space-between center\" fxFlex>\n        <div fxLayout=\"row\" fxLayoutAlign=\"start center\">\n            <a mat-button>Karthik's Album</a>\n            <span>&bull;</span>\n            <a mat-button>@2021</a>\n        </div>\n\n\n    </div>\n\n</mat-toolbar>\n"
 
 /***/ }),
 
@@ -70629,7 +70825,7 @@ module.exports = "<mat-toolbar>\n\n    <div fxLayout=\"row\" fxLayoutAlign=\"cen
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  display: flex;\n  flex: 0 0 auto;\n  z-index: 3; }\n  :host .mat-toolbar {\n    background: inherit;\n    color: inherit;\n    box-shadow: 0px -1px 1px -1px rgba(0, 0, 0, 0.2), 0px 0px 1px 0px rgba(0, 0, 0, 0.14), 0px -1px 3px 0px rgba(0, 0, 0, 0.12); }\n  :host.above {\n    position: relative;\n    z-index: 99; }\n"
+module.exports = ":host{display:flex;flex:0 0 auto;z-index:3}:host .mat-toolbar{background:inherit;color:inherit;box-shadow:0px -1px 1px -1px rgba(0,0,0,0.2),0px 0px 1px 0px rgba(0,0,0,0.14),0px -1px 3px 0px rgba(0,0,0,0.12)}:host.above{position:relative;z-index:99}\n"
 
 /***/ }),
 
@@ -70746,7 +70942,7 @@ module.exports = "<album-navigation layout=\"horizontal\"></album-navigation>"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "navbar.horizontal-style-1 {\n  display: flex;\n  flex-direction: column;\n  flex: 1 1 auto;\n  width: 100%;\n  height: 56px;\n  max-height: 56px;\n  min-height: 56px; }\n"
+module.exports = "navbar.horizontal-style-1{display:flex;flex-direction:column;flex:1 1 auto;width:100%;height:56px;max-height:56px;min-height:56px}\n"
 
 /***/ }),
 
@@ -71055,7 +71251,7 @@ module.exports = "<div class=\"navbar-top mat-green-700-bg\">\n\n    <div class=
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n * @param target Which kind of high contrast setting to target. Defaults to `active`, can be\n *    `white-on-black` or `black-on-white`.\n */\n/* Theme for the ripple elements.*/\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\nalbum-sidebar.navbar-album-sidebar {\n  overflow: hidden; }\nalbum-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-1 .navbar-top {\n    padding: 12px 0;\n    justify-content: center; }\nalbum-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-1 .navbar-top .buttons {\n      display: none; }\nalbum-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-1 .navbar-top .logo .logo-icon {\n      width: 32px;\n      height: 32px; }\nalbum-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-1 .navbar-top .logo .logo-text {\n      display: none; }\nalbum-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-1 .navbar-scroll-container .user {\n    padding: 12px 0; }\nalbum-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-1 .navbar-scroll-container .user .avatar-container {\n      position: relative;\n      top: auto;\n      padding: 0;\n      -webkit-transform: translateX(0);\n              transform: translateX(0);\n      left: auto; }\nalbum-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-1 .navbar-scroll-container .user .avatar-container .avatar {\n        width: 40px;\n        height: 40px; }\nalbum-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-1 .navbar-scroll-container .user .username,\n    album-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-1 .navbar-scroll-container .user .email {\n      display: none; }\nalbum-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-1 .navbar-scroll-container .navbar-content {\n    margin-top: 0; }\nnavbar.vertical-style-1 {\n  display: flex;\n  flex-direction: column;\n  flex: 1 1 auto;\n  width: 100%;\n  height: 100%; }\nnavbar.vertical-style-1.right-navbar .toggle-sidebar-opened mat-icon {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg); }\nnavbar navbar-vertical-style-1 {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  height: 100%; }\nnavbar navbar-vertical-style-1 .navbar-top {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 auto;\n    align-items: center;\n    justify-content: space-between;\n    min-height: 64px;\n    max-height: 64px;\n    height: 64px;\n    padding: 12px 12px 12px 20px; }\n@media screen and (max-width: 599px) {\n      navbar navbar-vertical-style-1 .navbar-top {\n        min-height: 56px;\n        max-height: 56px;\n        height: 56px; } }\nnavbar navbar-vertical-style-1 .navbar-top .logo {\n      display: flex;\n      align-items: center; }\nnavbar navbar-vertical-style-1 .navbar-top .logo .logo-icon {\n        width: 24px;\n        height: 24px; }\nnavbar navbar-vertical-style-1 .navbar-top .logo .logo-text {\n        margin-left: 12px;\n        font-size: 16px;\n        font-weight: 300;\n        letter-spacing: 0.4px;\n        line-height: normal; }\nnavbar navbar-vertical-style-1 .navbar-top .buttons {\n      display: flex;\n      align-items: center; }\nnavbar navbar-vertical-style-1 .navbar-scroll-container {\n    overflow-y: auto;\n    -webkit-overflow-scrolling: touch;\n    background: linear-gradient(rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 30%), linear-gradient(rgba(0, 0, 0, 0.25) 0, rgba(0, 0, 0, 0) 40%);\n    background-repeat: no-repeat;\n    background-size: 100% 40px, 100% 10px;\n    background-attachment: local, scroll; }\nnavbar navbar-vertical-style-1 .navbar-scroll-container .user {\n      position: relative;\n      display: flex;\n      align-items: center;\n      justify-content: flex-start;\n      width: 100%;\n      padding: 24px 0 64px 0; }\nnavbar navbar-vertical-style-1 .navbar-scroll-container .user .avatar-container {\n        position: absolute;\n        top: 92px;\n        border-radius: 50%;\n        padding: 8px;\n        -webkit-transform: translateX(-50%);\n                transform: translateX(-50%);\n        left: 50%; }\nnavbar navbar-vertical-style-1 .navbar-scroll-container .user .avatar-container .avatar {\n          width: 72px;\n          height: 72px;\n          margin: 0; }\nnavbar navbar-vertical-style-1 .navbar-scroll-container .navbar-content {\n      flex: 1 1 auto;\n      margin-top: 32px; }\n"
+module.exports = "album-sidebar.navbar-album-sidebar{overflow:hidden}album-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-1 .navbar-top{padding:12px 0;justify-content:center}album-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-1 .navbar-top .buttons{display:none}album-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-1 .navbar-top .logo .logo-icon{width:32px;height:32px}album-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-1 .navbar-top .logo .logo-text{display:none}album-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-1 .navbar-scroll-container .user{padding:12px 0}album-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-1 .navbar-scroll-container .user .avatar-container{position:relative;top:auto;padding:0;-webkit-transform:translateX(0);transform:translateX(0);left:auto}album-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-1 .navbar-scroll-container .user .avatar-container .avatar{width:40px;height:40px}album-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-1 .navbar-scroll-container .user .username,album-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-1 .navbar-scroll-container .user .email{display:none}album-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-1 .navbar-scroll-container .navbar-content{margin-top:0}navbar.vertical-style-1{display:flex;flex-direction:column;flex:1 1 auto;width:100%;height:100%}navbar.vertical-style-1.right-navbar .toggle-sidebar-opened mat-icon{-webkit-transform:rotate(180deg);transform:rotate(180deg)}navbar navbar-vertical-style-1{display:flex;flex-direction:column;width:100%;height:100%}navbar navbar-vertical-style-1 .navbar-top{display:flex;flex-direction:row;flex:1 0 auto;align-items:center;justify-content:space-between;min-height:64px;max-height:64px;height:64px;padding:12px 12px 12px 20px}@media screen and (max-width: 599px){navbar navbar-vertical-style-1 .navbar-top{min-height:56px;max-height:56px;height:56px}}navbar navbar-vertical-style-1 .navbar-top .logo{display:flex;align-items:center}navbar navbar-vertical-style-1 .navbar-top .logo .logo-icon{width:24px;height:24px}navbar navbar-vertical-style-1 .navbar-top .logo .logo-text{margin-left:12px;font-size:16px;font-weight:300;letter-spacing:0.4px;line-height:normal}navbar navbar-vertical-style-1 .navbar-top .buttons{display:flex;align-items:center}navbar navbar-vertical-style-1 .navbar-scroll-container{overflow-y:auto;-webkit-overflow-scrolling:touch;background:linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,0) 30%),linear-gradient(rgba(0,0,0,0.25) 0, rgba(0,0,0,0) 40%);background-repeat:no-repeat;background-size:100% 40px, 100% 10px;background-attachment:local, scroll}navbar navbar-vertical-style-1 .navbar-scroll-container .user{position:relative;display:flex;align-items:center;justify-content:flex-start;width:100%;padding:24px 0 64px 0}navbar navbar-vertical-style-1 .navbar-scroll-container .user .avatar-container{position:absolute;top:92px;border-radius:50%;padding:8px;-webkit-transform:translateX(-50%);transform:translateX(-50%);left:50%}navbar navbar-vertical-style-1 .navbar-scroll-container .user .avatar-container .avatar{width:72px;height:72px;margin:0}navbar navbar-vertical-style-1 .navbar-scroll-container .navbar-content{flex:1 1 auto;margin-top:32px}\n"
 
 /***/ }),
 
@@ -71294,7 +71490,7 @@ module.exports = "<div class=\"navbar-header\">\n\n    <div class=\"logo\">\n   
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n * @param target Which kind of high contrast setting to target. Defaults to `active`, can be\n *    `white-on-black` or `black-on-white`.\n */\n/* Theme for the ripple elements.*/\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\nalbum-sidebar.navbar-album-sidebar {\n  overflow: hidden; }\nalbum-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-2 .navbar-header {\n    padding: 0 13px; }\nalbum-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-2 .navbar-header .logo .logo-text {\n      opacity: 0;\n      transition: opacity 200ms ease; }\nnavbar.vertical-style-2 {\n  display: flex;\n  flex-direction: column;\n  flex: 1 1 auto;\n  width: 100%;\n  height: 100%; }\nnavbar.vertical-style-2.right-navbar .toggle-sidebar-opened mat-icon {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg); }\nnavbar navbar-vertical-style-2 {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  height: 100%; }\nnavbar navbar-vertical-style-2 .navbar-header {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    height: 64px;\n    min-height: 64px;\n    padding: 0 16px 0 24px;\n    transition: padding 200ms ease;\n    background-color: rgba(255, 255, 255, 0.05);\n    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); }\nnavbar navbar-vertical-style-2 .navbar-header .logo {\n      display: flex;\n      align-items: center; }\nnavbar navbar-vertical-style-2 .navbar-header .logo .logo-icon {\n        width: 38px;\n        height: 38px; }\nnavbar navbar-vertical-style-2 .navbar-header .logo .logo-text {\n        margin-left: 8px;\n        font-size: 20px;\n        font-weight: 300;\n        letter-spacing: 0.4px; }\nnavbar navbar-vertical-style-2 .navbar-content {\n    flex: 1 1 auto;\n    overflow-y: auto;\n    -webkit-overflow-scrolling: touch; }\n"
+module.exports = "album-sidebar.navbar-album-sidebar{overflow:hidden}album-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-2 .navbar-header{padding:0 13px}album-sidebar.navbar-album-sidebar.folded:not(.unfolded) navbar navbar-vertical-style-2 .navbar-header .logo .logo-text{opacity:0;transition:opacity 200ms ease}navbar.vertical-style-2{display:flex;flex-direction:column;flex:1 1 auto;width:100%;height:100%}navbar.vertical-style-2.right-navbar .toggle-sidebar-opened mat-icon{-webkit-transform:rotate(180deg);transform:rotate(180deg)}navbar navbar-vertical-style-2{display:flex;flex-direction:column;width:100%;height:100%}navbar navbar-vertical-style-2 .navbar-header{display:flex;align-items:center;justify-content:space-between;height:64px;min-height:64px;padding:0 16px 0 24px;transition:padding 200ms ease;background-color:rgba(255,255,255,0.05);box-shadow:0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)}navbar navbar-vertical-style-2 .navbar-header .logo{display:flex;align-items:center}navbar navbar-vertical-style-2 .navbar-header .logo .logo-icon{width:38px;height:38px}navbar navbar-vertical-style-2 .navbar-header .logo .logo-text{margin-left:8px;font-size:20px;font-weight:300;letter-spacing:0.4px}navbar navbar-vertical-style-2 .navbar-content{flex:1 1 auto;overflow-y:auto;-webkit-overflow-scrolling:touch}\n"
 
 /***/ }),
 
@@ -71522,7 +71718,7 @@ module.exports = "<mat-list class=\"date\" cdkFocusRegionStart>\n\n    <h3 matSu
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "quick-panel {\n  display: flex;\n  width: 280px;\n  min-width: 280px;\n  max-width: 280px;\n  z-index: 99;\n  flex-direction: column; }\n  quick-panel .mat-slide-toggle-content {\n    flex: 1; }\n"
+module.exports = "quick-panel{display:flex;width:280px;min-width:280px;max-width:280px;z-index:99;flex-direction:column}quick-panel .mat-slide-toggle-content{flex:1}\n"
 
 /***/ }),
 
@@ -71684,7 +71880,7 @@ module.exports = "<mat-toolbar class=\"p-0 mat-elevation-z1\">\n\n    <div fxFle
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n * @param target Which kind of high contrast setting to target. Defaults to `active`, can be\n *    `white-on-black` or `black-on-white`.\n */\n/* Theme for the ripple elements.*/\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\n:host {\n  position: relative;\n  display: flex;\n  flex: 0 0 auto;\n  z-index: 4; }\n:host.below {\n    z-index: 2; }\n:host .mat-toolbar {\n    position: relative;\n    background: inherit;\n    color: inherit; }\n:host .logo {\n    display: flex;\n    align-items: center; }\n:host .logo .logo-icon {\n      width: 38px; }\n:host .user-button,\n  :host album-search-bar,\n  :host .language-button,\n  :host .chat-panel-toggle-button,\n  :host .quick-panel-toggle-button {\n    min-width: 64px;\n    height: 64px; }\n@media (max-width: 599px) {\n      :host .user-button,\n      :host album-search-bar,\n      :host .language-button,\n      :host .chat-panel-toggle-button,\n      :host .quick-panel-toggle-button {\n        height: 56px; } }\n:host .navbar-toggle-button {\n    min-width: 56px;\n    height: 56px; }\n:host .toolbar-separator {\n    height: 64px;\n    width: 1px;\n    background: rgba(0, 0, 0, 0.12); }\n@media (max-width: 599px) {\n      :host .toolbar-separator {\n        height: 56px; } }\n"
+module.exports = ":host{position:relative;display:flex;flex:0 0 auto;z-index:4}:host.below{z-index:2}:host .mat-toolbar{position:relative;background:inherit;color:inherit}:host .logo{display:flex;align-items:center}:host .logo .logo-icon{width:38px}:host .user-button,:host album-search-bar,:host .language-button,:host .chat-panel-toggle-button,:host .quick-panel-toggle-button{min-width:64px;height:64px}@media (max-width: 599px){:host .user-button,:host album-search-bar,:host .language-button,:host .chat-panel-toggle-button,:host .quick-panel-toggle-button{height:56px}}:host .navbar-toggle-button{min-width:56px;height:56px}:host .toolbar-separator{height:64px;width:1px;background:rgba(0,0,0,0.12)}@media (max-width: 599px){:host .toolbar-separator{height:56px}}\n"
 
 /***/ }),
 
@@ -71931,7 +72127,7 @@ module.exports = "<!-- SIDE PANEL -->\n<ng-container *ngIf=\"!albumConfig.layout
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n * @param target Which kind of high contrast setting to target. Defaults to `active`, can be\n *    `white-on-black` or `black-on-white`.\n */\n/* Theme for the ripple elements.*/\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\nhorizontal-layout-1 {\n  display: flex;\n  flex: 1 1 auto;\n  width: 100%;\n  height: 100%; }\nhorizontal-layout-1 #main {\n    position: relative;\n    display: flex;\n    flex: 1 1 auto;\n    flex-direction: column;\n    width: 100%;\n    height: 100%;\n    z-index: 1;\n    min-width: 0; }\nhorizontal-layout-1 #main > .container {\n      position: relative;\n      display: flex;\n      flex: 1 1 0%;\n      width: 100%;\n      min-height: 0;\n      min-width: 0; }\nhorizontal-layout-1 #main > .container > .container {\n        position: relative;\n        display: flex;\n        flex: 1 1 0%;\n        flex-direction: column;\n        min-width: 0; }\nhorizontal-layout-1 #main > .container > .container > .container {\n          position: relative;\n          display: flex;\n          flex: 1 1 0%;\n          flex-direction: column;\n          -webkit-transform: translateZ(0);\n                  transform: translateZ(0);\n          overflow-x: hidden;\n          overflow-y: auto;\n          -webkit-overflow-scrolling: touch; }\nhorizontal-layout-1 #main > .container > .container > .container content.inner-scroll {\n            flex: 1 1 0%;\n            min-height: 0; }\nhorizontal-layout-1 #main > .container > .container > .container content.inner-scroll > *:not(router-outlet) {\n              flex: 1 1 0%; }\n"
+module.exports = "horizontal-layout-1{display:flex;flex:1 1 auto;width:100%;height:100%}horizontal-layout-1 #main{position:relative;display:flex;flex:1 1 auto;flex-direction:column;width:100%;height:100%;z-index:1;min-width:0}horizontal-layout-1 #main>.container{position:relative;display:flex;flex:1 1 0%;width:100%;min-height:0;min-width:0}horizontal-layout-1 #main>.container>.container{position:relative;display:flex;flex:1 1 0%;flex-direction:column;min-width:0}horizontal-layout-1 #main>.container>.container>.container{position:relative;display:flex;flex:1 1 0%;flex-direction:column;-webkit-transform:translateZ(0);transform:translateZ(0);overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch}horizontal-layout-1 #main>.container>.container>.container content.inner-scroll{flex:1 1 0%;min-height:0}horizontal-layout-1 #main>.container>.container>.container content.inner-scroll>*:not(router-outlet){flex:1 1 0%}\n"
 
 /***/ }),
 
@@ -72148,7 +72344,7 @@ module.exports = "<div id=\"main\">\n\n    <!-- TOOLBAR: Above -->\n    <ng-cont
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n * @param target Which kind of high contrast setting to target. Defaults to `active`, can be\n *    `white-on-black` or `black-on-white`.\n */\n/* Theme for the ripple elements.*/\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\nvertical-layout-1 {\n  display: flex;\n  flex: 1 1 auto;\n  width: 100%;\n  height: 100%; }\nvertical-layout-1 #main {\n    position: relative;\n    display: flex;\n    flex: 1 1 auto;\n    flex-direction: column;\n    width: 100%;\n    height: 100%;\n    z-index: 1;\n    min-width: 0; }\nvertical-layout-1 #main > .container {\n      position: relative;\n      display: flex;\n      flex: 1 1 0%;\n      width: 100%;\n      min-height: 0;\n      min-width: 0; }\nvertical-layout-1 #main > .container > .container {\n        position: relative;\n        display: flex;\n        flex: 1 1 0%;\n        flex-direction: column;\n        min-width: 0; }\nvertical-layout-1 #main > .container > .container > .container {\n          position: relative;\n          display: flex;\n          flex: 1 1 0%;\n          flex-direction: column;\n          -webkit-transform: translateZ(0);\n                  transform: translateZ(0);\n          overflow-x: hidden;\n          overflow-y: auto;\n          -webkit-overflow-scrolling: touch; }\nvertical-layout-1 #main > .container > .container > .container content.inner-scroll {\n            flex: 1 1 0%;\n            min-height: 0; }\nvertical-layout-1 #main > .container > .container > .container content.inner-scroll > *:not(router-outlet) {\n              flex: 1 1 0%; }\n"
+module.exports = "vertical-layout-1{display:flex;flex:1 1 auto;width:100%;height:100%}vertical-layout-1 #main{position:relative;display:flex;flex:1 1 auto;flex-direction:column;width:100%;height:100%;z-index:1;min-width:0}vertical-layout-1 #main>.container{position:relative;display:flex;flex:1 1 0%;width:100%;min-height:0;min-width:0}vertical-layout-1 #main>.container>.container{position:relative;display:flex;flex:1 1 0%;flex-direction:column;min-width:0}vertical-layout-1 #main>.container>.container>.container{position:relative;display:flex;flex:1 1 0%;flex-direction:column;-webkit-transform:translateZ(0);transform:translateZ(0);overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch}vertical-layout-1 #main>.container>.container>.container content.inner-scroll{flex:1 1 0%;min-height:0}vertical-layout-1 #main>.container>.container>.container content.inner-scroll>*:not(router-outlet){flex:1 1 0%}\n"
 
 /***/ }),
 

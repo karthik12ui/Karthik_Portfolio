@@ -7,19 +7,24 @@ export class KarthikProfileFakeDb {
                 'Hyderbad, India',
                 'Columbus-OH, USA',
                 'Seattle-WA, USA',
-                'Whitehouse Station-NJ, USA'
+                'Whitehouse Station-NJ, USA',
+                'Bridgewater-NJ, USA'
             ],
              // tslint:disable-next-line:max-line-length
-            'about'    : 'Over 7 years of extensive professional experience with HTML5, XHTML, DOM, CSS3, JavaScript, AJAX and Leading User Interface (UI) web applications. Extremely proficient with web Development using JavaScript, especially using jQuery, AngularJS (1.x&2+), Bootstrap and jQuery UI frameworks in AJAX driven websites. Excellent skills in gathering business requirements and designing a Single Page Applications Framework using AngularJS custom modules which can be reusable in multiple projects.'
+            'about'    : 'Over nine years of professional experience in designing and developing web applications using HTML5, CSS3, SCSS, Angular Flux, Angular Material, Bootstrap, and leading Javascript and Typescript frameworks (Angular 1.x & 2, 4, 6, 7, 9 and React) for AJAX-driven websites. •	Excellent skills in gathering business requirements and designing and developing a Single Page Application MVC framework with Angular CLI. Expertise in developing MEAN stack applications using NodeJS, express as middleware, JWT, MongoDB and Angular as client-side code, to building secure RESTful API development as light weight application.'
         },
         'work'   : {
             'occupation': 'UX / UI Developer',
             // tslint:disable-next-line:max-line-length
-            'skills'    : 'HTML, CSS, SCSS, Javascript, Typescript, Angular(1.X,2,4,5+), Angular Material, Bootstrap, High Charts, D3 Charts, Data Tables, NodeJS, SQL',
+            'skills'    : 'HTML5, CSS3, SCSS, XML, Web Standards (XHTML, CSS), Angular, REACT, jQuery, Angular Flux, Angular Material, Bootstrap, NodeJS, MongoDB, Express, High Charts, D3 Charts, Sockets.io, Tableau, R studio, SQL, New Relic, Google analytics, Kibana, Google cloud platform',
             'jobs'      : [
                 {
+                    'company': 'Verizon',
+                    'date'   : 'Septemeber 2018 - Present'
+                },
+                {
                     'company': 'Chubb Limited, Insurance company',
-                    'date'   : 'April 2017 - Present'
+                    'date'   : 'April 2017 - August 2018'
                 },
                 {
                     'company': 'Department of Education',
@@ -27,11 +32,11 @@ export class KarthikProfileFakeDb {
                 },
                 {
                     'company': 'Quorum Review IRB',
-                    'date'   : 'June 2015 - October 2015'
+                    'date'   : 'March 2015 - November 2015'
                 },
                 {
-                    'company': 'ADS Pipe',
-                    'date'   : 'March 2014 - June 2015'
+                    'company': 'Collaborate Solutions, Inc',
+                    'date'   : 'September 2014 - March 2015'
                 },
                 {
                     'company': 'Smart Search Inc',

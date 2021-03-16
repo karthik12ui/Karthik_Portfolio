@@ -7,7 +7,7 @@ export class ProfessionalDashboardDb
                 '2012': [
                     {
                         label: 'Hours',
-                        data : [80, 80, 80, 160, 166, 170, 160, 140, 160, 160, 170, 80 ],
+                        data : [80, 80, 80, 160, 166, 170, 160, 140, 160, 160, 170, 160 ],
                         fill : 'start'
 
                     }
@@ -63,7 +63,23 @@ export class ProfessionalDashboardDb
                 '2019': [
                     {
                         label: 'Hours',
-                        data : [168, 160, 168, 112, 176, 160, 176, 176, 80, 0, 0, 0],
+                        data : [168, 160, 168, 112, 176, 160, 176, 176, 80, 168, 174, 168],
+                        fill : 'start'
+
+                    }
+                ],
+                '2020': [
+                    {
+                        label: 'Hours',
+                        data : [168, 160, 172, 162, 160, 176, 176, 160, 168, 0, 92, 168],
+                        fill : 'start'
+
+                    }
+                ],
+                '2021': [
+                    {
+                        label: 'Hours',
+                        data : [168, 160, 168, 112, 0, 0, 0, 0, 0, 0, 0, 0],
                         fill : 'start'
 
                     }
@@ -154,7 +170,11 @@ export class ProfessionalDashboardDb
                 },
                 {
                     name  : 'Coding',
-                    value : 60,
+                    value : 50,
+                },
+                {
+                    name  : 'CI/CD (Build / Deployment)',
+                    value : 10,
                 },
                 {
                     name  : 'Unit Testing',
@@ -169,23 +189,31 @@ export class ProfessionalDashboardDb
             {
                 id : 'verizon',
                 label: 'Project 1',
-                projectsWorked: 1,
+                projectsWorked: 4,
                 projectsWorkedSubTitle: 'Projects Worked @ Telecommunications company',
-                projectDuration: 13,
-                technologiesUsed: 8,
+                projectDuration: 30,
+                technologiesUsed: 10,
                    content   :  {
-                    'content': '<h1>As a Angular Developer</h1>' +
+                    'content': '<h1>As a UX / UI Angular Developer</h1>' +
                     '<ul>' +
                     '<li>' +
-                    'Designed and Developed a Dynamic application that can adopt processing and activating multiple brand devices. Once Activation is successful application provides the details and summary along with the other supporting functionality' +
+                    'Responsible for designing and developing responsive customer facing, admin managed Private Network for IoT devices and ThingSpace Services application using HTML5, SASS, Angular flux, Angular material and Angular 7 and 9' +
                     '</li>' +
                     '<br>' +
                     '<li>' +
-                    'Application has Dynamic content that chnages based on users directed to application that include page content, subscription plan, form fields and its validation' +
+                    'Leading team as a front-end designer / developer participated in the technical design review process to ensure high quality technical designs to identify deliver best practices and center of excellence touch point meetings with demos.' +
                     '</li>' +
                     '<br>' +
                     '<li>' +
-                    'Created the application with Angular 6+ and has resuable components and services which can handle dynamic alerts error messages modals and more.' +
+                    'Designing both template and Reactive based Forms with cross field custom form validations. Produced visually appealing designs focused on usability, utility, UX, cross-browser compatibility and SEO /web standards.' +
+                    '</li>'+
+                    '<br>' +
+                    '<li>' +
+                    'Designed and developed by aligning with security principles and standards of Verizon. Cleared all critical and high-level security issues if any request comes as part of audit scans like fortify, black duck, pen tests.' +
+                    '</li>'+
+                    '<br>' +
+                    '<li>' +
+                    'Developed data visualization charts by creating RTC module (Real time communication) with socket i.o to broadcast real time onboarding status on dashboards.' +
                     '</li>'
                 },
                },
@@ -200,7 +228,7 @@ export class ProfessionalDashboardDb
                     'content': '<h1>As a Angular Developer</h1>' +
                     '<ul>' +
                     '<li>' +
-                    'Responsible for Developing Application using HTML5, CSS3, Flex, Bootstrap, Angular 2+ for Agents and Clients Enterprise Application called Small Commercial Insurance Portal (Marketplace) and Client Center Portal.' +
+                    'Designed and Developed singe page application using HTML5, CSS3, Flex, Bootstrap, Angular 2+ with Redux architecture for Clients Enterprise Application Client Center Portal.' +
                     '</li>' +
                     '<br>' +
                     '<li>' +
@@ -208,7 +236,11 @@ export class ProfessionalDashboardDb
                     '</li>' +
                     '<br>' +
                     '<li>' +
-                    'Implemented Typescript Reusable multi slot content projection, parent and child components and services to consume REST APIs using Component based architecture with Angular Cli.' +
+                    'Developed with ECMA Script 6 features for build of JSX and ES2015 (ES6) webpack design pattern on Components and Services for shared data between Components.' +
+                    '</li>'+
+                    '<br>' +
+                    '<li>' +
+                    'Created custom Pipes to filter data on template and using built-in Pipes along with them, also implemented filtering, sorting methods to display the ordered list based on status of order.' +
                     '</li>'
                 },
                },
@@ -223,12 +255,16 @@ export class ProfessionalDashboardDb
                  'content': '<h1>As a UX Designer / UI Developer</h1>' +
                  '<ul>' +
                  '<li>' +
-                 'Designed prototypes and rich Responsive User Interface applications using HTML5, CSS3, JavaScript, jQuery, AJAX, JSON, AngularJS, High Charts and Bootstrap.' +
+                 'Worked at Department of Education for the projects OEDS Redesign and EAS Dashboard and involved in various phases of development life cycle from requirement analysis, design, implementation and testing.' +
                  '</li>' +
                  '<br>' +
                  '<li>' +
-                 'Implemented MVC architectures by creating modules, controllers, templates, custom directives, pipes and custom filters with Angular JS 1.2' +
+                 'Built rich prototypes and applications using HTML5, CSS3, SASS, JavaScript, jQuery, AJAX, JSON, AngularJS, High Charts and Bootstrap' +
                  '</li>' +
+                 '<br>' +
+                 '<li>' +
+                 'Worked on AngularJS framework including MVC architectures, different modules, specific controllers, templates, custom directives and custom filters and used AngularJS for dependency injections' +
+                 '</li>'+
                  '<br>' +
                  '<li>' +
                  'Developed on demand, combo and compression server using AngularJS, Responsive report data chart using D3 Data Visualization charts, implemented drill down charts routing techniques using High charts and Angular JS Routing' +
@@ -240,21 +276,25 @@ export class ProfessionalDashboardDb
                 label: 'Project 4',
              projectsWorked: 1,
              projectsWorkedSubTitle: 'Projects Worked @ Independent Review Board',
-             projectDuration: 4,
+             projectDuration: 8,
              technologiesUsed: 5,
                 content   :  {
                  'content': '<h1>As a MEAN Stack Developer</h1>' +
                  '<ul>' +
                  '<li>' +
-                 'Worked with clients and Senior User Experience Designers to understand their branding strategies and design goals to define visual design strategy, layout, and features to design their web sites/applications.' +
+                 'Worked as a MEAN stack developer on NodeJS applications using express as middleware, JWT, MongoDB and Angular JS as client-side code, to building secure RESTful API development as light weight application.' +
                  '</li>' +
                  '<br>' +
                  '<li>' +
-                 'Used client side scripting languages as JavaScript added collections of list of objects in database Mongo DB Locally with Robo Mongo and Implemented Schemas to store data and retrieve data from the Mongo DB.' +
+                 'As a User Experience Designer designed branding strategies and goals to define visual design strategy, layout, and features to design their web sites/applications.' +
                  '</li>' +
                  '<br>' +
                  '<li>' +
-                 'Developed a Schema to Send an E-mail Notifications to the users who has an account in the Application with Alert Message when were ever an event is added to the application or removed from the application.' +
+                 'Created shared modules, templates, custom directives and custom filters and with AngularJS for dependency injection.' +
+                 '</li>'+
+                 '<br>' +
+                 '<li>' +
+                 'Developed broadcasting of Live events using Sockets.io packages for features involved in application of live streaming real time data to multiple customers logged to same event.' +
                  '</li>'
              },
             },
@@ -262,22 +302,31 @@ export class ProfessionalDashboardDb
                 id : 'ads',
                 label: 'Project 5',
              projectsWorked: 1,
-             projectsWorkedSubTitle: 'Projects Worked @ ADS Pipe',
-             projectDuration: 14,
+             projectsWorkedSubTitle: 'Projects Worked @ :  Collaborate Solutions, Inc',
+             projectDuration: 6,
              technologiesUsed: 5,
                 content   :  {
-                 'content': '<h1>As a UX Designer / UI Developer</h1>' +
+                 'content': '<h1>As a Software Developer</h1>' +
                  '<ul>' +
                  '<li>' +
-                 'Designed mockups, GUI layouts by using HTML, DHTML, XHTML, XML, CSS and JavaScript in securing the application using form-based authentication' +
+                 'Designed mockups, GUI layouts by using HTML5, CSS and JavaScript with table-less designs meeting W3C standards.' +
                  '</li>' +
                  '<br>' +
                  '<li>' +
-                 'Performed Client side validation with bootstrap feedback icons and JQuery.' +
+                 'Created forms with validation displaying inline error messages along with the handling of masking and format patterns for input fields and developing application aligning with security principles.' +
                  '</li>' +
                  '<br>' +
                  '<li>' +
-                 'Created Email Template for Invoices which generates with batch process and implemented Nested Views with the help of AngularJS UI-view & UI-SREF, implemented custom directives for reusable components used across the application.' +
+                 'Used JQuery for creating reusable widgets for calendar drag and drop file uploads, table grids, form validations integrating with RESTful services.' +
+                 '</li>'
+                 +
+                 '<br>' +
+                 '<li>' +
+                 'Developed optimized schema designs to upload and retrieve documents and images in mongoDB using gridFS. Performed AES level encryption schemas to store sensitive data.' +
+                 '</li>'  +
+                 '<br>' +
+                 '<li>' +
+                 '•	Resolved cross-browser issues and web site usability issues with visually appealing designs focused on usability, utility, UX, cross-browser compatibility and SEO /web standards.' +
                  '</li>'
              },
             },
@@ -289,18 +338,18 @@ export class ProfessionalDashboardDb
              projectDuration: 20,
              technologiesUsed: 4,
                 content   :  {
-                 'content': '<h1>As a UX / UI Developer</h1>' +
+                 'content': '<h1>As a :  Software Developer</h1>' +
                  '<ul>' +
                  '<li>' +
-                 'Responsible for checking cross browser compatibility and hence worked on different browsers like safari, internet explorer, Firefox and Google chrome.' +
+                 'As an intern worked closely with Business Analysts in understanding the technical requirements of each project and prepared the use cases for different functionalities and designs.' +
                  '</li>' +
                  '<br>' +
                  '<li>' +
-                 'Used JQuery for creating various widgets, data manipulation, data traversing, form validations, create the content on the fly depend on the user request, implementing Ajax features for the application.' +
+                 'Work in close collaboration with internal customers and teams to develop strategies that address product content and overall user experience design for Catalyst’s clients.' +
                  '</li>' +
                  '<br>' +
                  '<li>' +
-                 'Implemented various Validation Controls for form validation and implemented custom validation controls with JavaScript validation controls.' +
+                 'Created JQuery scripts for basic animation and end user screen customization purposes.' +
                  '</li>'
              },
             }

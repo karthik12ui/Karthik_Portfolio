@@ -72,6 +72,16 @@
          [ngClass]="{'green-300-bg': widget1SelectedYear === '2019'}">
         2019
     </div>
+    <div class="py-8 px-12 border-radius-2 line-height-1 cursor-pointer"
+         (click)="widget1SelectedYear = '2020'"
+         [ngClass]="{'green-300-bg': widget1SelectedYear === '2020'}">
+        2020
+    </div>
+    <div class="py-8 px-12 border-radius-2 line-height-1 cursor-pointer"
+    (click)="widget1SelectedYear = '2021'"
+    [ngClass]="{'green-300-bg': widget1SelectedYear === '2021'}">
+    2021
+</div>
           </div>
       </div>
 
@@ -106,7 +116,7 @@
                             </ngx-charts-pie-chart>
                         </div>                 
                 <div class="p-16" fxLayout="row wrap" fxLayoutAlign="center center">
-                    <div class="px-16 " fxFlex="100" fxFlex.gt-xs="25" fxLayout="column" fxLayoutAlign="start center"
+                    <div class="px-16 " fxFlex="100" fxFlex.gt-xs="33.33" fxLayout="column" fxLayoutAlign="start center"
                          *ngFor="let device of widgets.widget7.devices">
                         <div class="h4 secondary-text">{{device.name}}</div>
                         <div class="h2 font-weight-300 py-8">{{device.value}}%</div>
@@ -242,7 +252,7 @@
                                 <div class="skill-rate-on"></div>
                                 <div class="skill-rate-off"></div>
                             </div>
-                            <div class="h3 secondary-text font-weight-500">Angular (1.x & 2, 4, 7+)</div>
+                            <div class="h3 secondary-text font-weight-500">Angular (1.x & 2, 4, 7, 9+)</div>
                             <div class="skill-bar">
                                 <div class="skill-rate-on"></div>
                                 <div class="skill-rate-on"></div>
@@ -256,7 +266,7 @@
                                 <div class="skill-rate-on"></div>
                                 <div class="skill-rate-off"></div>
                             </div>
-                            <div class="h3 secondary-text font-weight-500">Google Analytics Integration</div>
+                            <div class="h3 secondary-text font-weight-500">New Relic / Google Analytics</div>
                             <div class="skill-bar">
                                 <div class="skill-rate-on"></div>
                                 <div class="skill-rate-on"></div>
@@ -277,7 +287,35 @@
                                 <div class="skill-rate-off"></div>
                                 <div class="skill-rate-off"></div>
                             </div>
+                            <div class="h3 secondary-text font-weight-500">MongoDB</div>
+                            <div class="skill-bar">
+                                <div class="skill-rate-on"></div>
+                                <div class="skill-rate-on"></div>
+                                <div class="skill-rate-on"></div>
+                                <div class="skill-rate-off"></div>
+                            </div>
+                            <div class="h3 secondary-text font-weight-500">R Studio</div>
+                            <div class="skill-bar">
+                                <div class="skill-rate-on"></div>
+                                <div class="skill-rate-on"></div>
+                                <div class="skill-rate-on"></div>
+                                <div class="skill-rate-on"></div>
+                            </div>
+                            <div class="h3 secondary-text font-weight-500">Git Lab CI/CD</div>
+                            <div class="skill-bar">
+                                <div class="skill-rate-on"></div>
+                                <div class="skill-rate-on"></div>
+                                <div class="skill-rate-on"></div>
+                                <div class="skill-rate-off"></div>
+                            </div>
                             <div class="h3 secondary-text font-weight-500">AWS EC2 Instance / S3 Buckets</div>
+                            <div class="skill-bar">
+                                <div class="skill-rate-on"></div>
+                                <div class="skill-rate-on"></div>
+                                <div class="skill-rate-off"></div>
+                                <div class="skill-rate-off"></div>
+                            </div>
+                            <div class="h3 secondary-text font-weight-500">Google Cloud Platform</div>
                             <div class="skill-bar">
                                 <div class="skill-rate-on"></div>
                                 <div class="skill-rate-on"></div>
