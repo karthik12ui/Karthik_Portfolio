@@ -1,7 +1,7 @@
 version: 0.1
 environment_variables:
     plaintext:
-        S3_BUCKET: "karthikalbumfinal"
+        S3_BUCKET: "album-karthik"
         BUILD_ENV: "prod"
 phases:
     install:
