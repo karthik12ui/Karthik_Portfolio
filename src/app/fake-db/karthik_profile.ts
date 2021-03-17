@@ -54,7 +54,7 @@ export class KarthikProfileFakeDb {
                 'www.karthiknathani.com'
             ],
             'emails'  : [
-                'karthik.uiAngular@gmail.com',
+                'karthik.ui09@gmail.com',
             ]
         },
         'groups' : [

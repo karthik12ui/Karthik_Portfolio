@@ -70541,7 +70541,7 @@ var KarthikProfileFakeDb = /** @class */ (function () {
                 'www.karthiknathani.com'
             ],
             'emails': [
-                'karthik.uiAngular@gmail.com',
+                'karthik.ui09@gmail.com',
             ]
         },
         'groups': [
@@ -71240,7 +71240,7 @@ var NavbarModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"navbar-top mat-green-700-bg\">\n\n    <div class=\"logo\">\n        <mat-icon>laptop_chromebook</mat-icon>\n        <span class=\"logo-text secondary-text\">Karthik's Album</span>\n    </div>\n\n    <div class=\"buttons\">\n\n        <button mat-icon-button class=\"toggle-sidebar-folded\"\n                (click)=\"toggleSidebarFolded()\" fxHide.lt-lg>\n            <mat-icon class=\"secondary-text\">menu</mat-icon>\n        </button>\n\n        <button mat-icon-button class=\"toggle-sidebar-opened\"\n                (click)=\"toggleSidebarOpened()\" fxHide.gt-md>\n            <mat-icon class=\"secondary-text\">arrow_back</mat-icon>\n        </button>\n\n    </div>\n\n</div>\n\n\n<div class=\"navbar-scroll-container\" albumPerfectScrollbar [albumPerfectScrollbarOptions]=\"{suppressScrollX: true}\">\n\n    <div class=\"user mat-gray-700-bg\" fxLayout=\"column\">\n\n        <div class=\"h3 username\">Karthik Nathani</div>\n        <div class=\"h5 email hint-text mt-8\">karthik.uiAngular@gmail.com</div>\n        <div class=\"avatar-container\" [ngClass]=\"albumConfig.layout.navbar.background\">\n            <img class=\"avatar\" src=\"./assets/images/avatars/kar1.jpg\">\n        </div>\n\n    </div>\n\n    <div class=\"navbar-content\">\n        <album-navigation layout=\"vertical\"></album-navigation>\n    </div>\n\n</div>\n"
+module.exports = "<div class=\"navbar-top mat-green-700-bg\">\n\n    <div class=\"logo\">\n        <mat-icon>laptop_chromebook</mat-icon>\n        <span class=\"logo-text secondary-text\">Karthik's Album</span>\n    </div>\n\n    <div class=\"buttons\">\n\n        <button mat-icon-button class=\"toggle-sidebar-folded\"\n                (click)=\"toggleSidebarFolded()\" fxHide.lt-lg>\n            <mat-icon class=\"secondary-text\">menu</mat-icon>\n        </button>\n\n        <button mat-icon-button class=\"toggle-sidebar-opened\"\n                (click)=\"toggleSidebarOpened()\" fxHide.gt-md>\n            <mat-icon class=\"secondary-text\">arrow_back</mat-icon>\n        </button>\n\n    </div>\n\n</div>\n\n\n<div class=\"navbar-scroll-container\" albumPerfectScrollbar [albumPerfectScrollbarOptions]=\"{suppressScrollX: true}\">\n\n    <div class=\"user mat-gray-700-bg\" fxLayout=\"column\">\n\n        <div class=\"h3 username\">Karthik Nathani</div>\n        <div class=\"h5 email hint-text mt-8\">karthik.ui09@gmail.com</div>\n        <div class=\"avatar-container\" [ngClass]=\"albumConfig.layout.navbar.background\">\n            <img class=\"avatar\" src=\"./assets/images/avatars/kar1.jpg\">\n        </div>\n\n    </div>\n\n    <div class=\"navbar-content\">\n        <album-navigation layout=\"vertical\"></album-navigation>\n    </div>\n\n</div>\n"
 
 /***/ }),
 
